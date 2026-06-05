@@ -147,6 +147,32 @@
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
       .nav-toggle { display: block; }
+
+      nav.nav-open { flex-wrap: wrap; }
+      nav.nav-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        order: 10;
+        gap: 0;
+        padding: 0.75rem 0 0.5rem;
+        border-top: 1px solid rgba(122, 191, 90, 0.15);
+        margin-top: 0.5rem;
+      }
+      nav.nav-open .nav-links li a {
+        display: block;
+        padding: 0.6rem 0;
+        font-size: 0.9rem;
+      }
+      nav.nav-open .nav-cta {
+        display: block;
+        order: 11;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
     }
 
     /* ── HERO ── */
@@ -1824,6 +1850,20 @@
       applyLang(saved === 'en' ? 'en' : 'th');
 
       lucide.createIcons();
+
+      // Mobile nav toggle
+      var navToggle = document.querySelector('.nav-toggle');
+      var navEl = document.querySelector('nav');
+      if (navToggle && navEl) {
+        navToggle.addEventListener('click', function () {
+          navEl.classList.toggle('nav-open');
+        });
+        document.querySelectorAll('.nav-links a, a.nav-cta').forEach(function (a) {
+          a.addEventListener('click', function () {
+            navEl.classList.remove('nav-open');
+          });
+        });
+      }
     })();
   </script>
 </body>
