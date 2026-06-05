@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>เฟอนิเซิร์ฟ — Herbal Upholstery Care</title>
+  <title>เฟอนิเซิร์ฟ — ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากสมุนไพร</title>
+  <meta name="description" content="เฟอนิเซิร์ฟ ผลิตภัณฑ์ทำความสะอาดเบาะและผ้าคลุมเฟอร์นิเจอร์จากสารสกัดพืชธรรมชาติ ปราศจากสารเคมีอันตราย ปลอดภัยสำหรับทุกครอบครัว" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@0.460.0"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,12 +29,46 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Noto Sans Thai', 'DM Sans', 'Sukhumvit Set', sans-serif;
       background: var(--paper);
       color: var(--ink);
       line-height: 1.6;
       overflow-x: hidden;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
+
+    /* ─── LANG SWITCHER ─── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--sage);
+      padding: 0.28rem 0.7rem;
+      border-radius: 100px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: var(--forest);
+    }
+
+    .lang-btn:hover:not(.active) { color: var(--white); }
 
     /* ─── NAV ─── */
     nav {
@@ -46,6 +81,7 @@
       justify-content: space-between;
       padding: 0 5%;
       height: 68px;
+      gap: 1rem;
     }
 
     .nav-logo {
@@ -55,6 +91,7 @@
       color: var(--white);
       letter-spacing: 0.04em;
       text-decoration: none;
+      flex-shrink: 0;
     }
 
     .nav-logo span { color: var(--accent); }
@@ -63,6 +100,7 @@
       display: flex;
       gap: 2.4rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -86,6 +124,12 @@
     }
 
     .nav-cta:hover { opacity: 0.85; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
 
     .nav-burger {
       display: none;
@@ -145,9 +189,19 @@
       margin-bottom: 1.4rem;
     }
 
+    html[lang="th"] .hero h1 {
+      font-family: 'Noto Sans Thai', 'Sukhumvit Set', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.35;
+    }
+
     .hero h1 em {
       font-style: italic;
       color: var(--accent);
+    }
+
+    html[lang="th"] .hero h1 em {
+      font-style: normal;
     }
 
     .hero-desc {
@@ -159,6 +213,11 @@
       line-height: 1.75;
     }
 
+    html[lang="th"] .hero-desc {
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
     .hero-actions {
       display: flex;
       gap: 1rem;
@@ -168,7 +227,7 @@
     .btn-primary {
       background: var(--accent);
       color: var(--forest);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
       padding: 0.85rem 2rem;
@@ -190,7 +249,7 @@
     .btn-outline {
       background: transparent;
       color: var(--white);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
       font-weight: 500;
       font-size: 0.95rem;
       padding: 0.85rem 2rem;
@@ -348,6 +407,11 @@
       margin-bottom: 0.8rem;
     }
 
+    html[lang="th"] .section-header h2 {
+      font-family: 'Noto Sans Thai', 'Sukhumvit Set', sans-serif;
+      line-height: 1.4;
+    }
+
     .section-header p {
       font-size: 1rem;
       color: var(--muted);
@@ -404,6 +468,11 @@
       line-height: 1.3;
     }
 
+    html[lang="th"] .product-body h3 {
+      font-family: 'Noto Sans Thai', 'Sukhumvit Set', sans-serif;
+      line-height: 1.45;
+    }
+
     .product-body p {
       font-size: 0.88rem;
       color: var(--muted);
@@ -458,6 +527,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: background 0.2s;
+      font-family: 'Noto Sans Thai', 'DM Sans', sans-serif;
     }
 
     .btn-sm:hover { background: var(--mid); }
@@ -530,6 +600,11 @@
       font-weight: 600;
       color: var(--white);
       margin-bottom: 0.6rem;
+    }
+
+    html[lang="th"] .feature-card h3 {
+      font-family: 'Noto Sans Thai', 'Sukhumvit Set', sans-serif;
+      line-height: 1.45;
     }
 
     .feature-card p {
@@ -612,6 +687,11 @@
       line-height: 1.7;
       font-style: italic;
       flex: 1;
+    }
+
+    html[lang="th"] .testi-card blockquote {
+      font-style: normal;
+      line-height: 1.85;
     }
 
     .testi-author {
@@ -718,9 +798,18 @@
       margin-bottom: 1.4rem;
     }
 
+    html[lang="th"] .about-content h2 {
+      font-family: 'Noto Sans Thai', 'Sukhumvit Set', sans-serif;
+      line-height: 1.4;
+    }
+
     .about-content h2 em {
       font-style: italic;
       color: var(--mid);
+    }
+
+    html[lang="th"] .about-content h2 em {
+      font-style: normal;
     }
 
     .about-content p {
@@ -806,6 +895,11 @@
       max-width: 640px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    html[lang="th"] .cta-band h2 {
+      font-family: 'Noto Sans Thai', 'Sukhumvit Set', sans-serif;
+      line-height: 1.45;
     }
 
     .cta-band p {
@@ -1003,15 +1097,21 @@
 <nav>
   <a href="#" class="nav-logo">เฟอนิเซิร์ฟ<span>.</span></a>
   <ul class="nav-links">
-    <li><a href="#products">Products</a></li>
-    <li><a href="#features">Why Us</a></li>
-    <li><a href="#proof">Reviews</a></li>
-    <li><a href="#about">Our Story</a></li>
-    <li><a href="#cta" class="nav-cta">Shop Now</a></li>
+    <li><a href="#products" data-lang-th="สินค้า" data-lang-en="Products">สินค้า</a></li>
+    <li><a href="#features" data-lang-th="ทำไมต้องเรา" data-lang-en="Why Us">ทำไมต้องเรา</a></li>
+    <li><a href="#proof" data-lang-th="รีวิว" data-lang-en="Reviews">รีวิว</a></li>
+    <li><a href="#about" data-lang-th="เรื่องราวของเรา" data-lang-en="Our Story">เรื่องราวของเรา</a></li>
+    <li><a href="#cta" class="nav-cta" data-lang-th="ช้อปเลย" data-lang-en="Shop Now">ช้อปเลย</a></li>
   </ul>
-  <button class="nav-burger" aria-label="Menu">
-    <i data-lucide="menu"></i>
-  </button>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="Language switcher">
+      <button class="lang-btn active" data-lang="th" aria-pressed="true">TH</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="nav-burger" aria-label="Menu">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -1019,54 +1119,49 @@
   <div class="hero-left">
     <div class="hero-eyebrow">
       <i data-lucide="leaf"></i>
-      100% Plant-Derived Formula
+      <span data-lang-th="สูตรจากพืชธรรมชาติ 100%" data-lang-en="100% Plant-Derived Formula">สูตรจากพืชธรรมชาติ 100%</span>
     </div>
-    <h1>
-      Nature's Power,<br />
-      <em>Perfectly Clean</em><br />
-      Upholstery.
-    </h1>
-    <p class="hero-desc">
-      เฟอนิเซิร์ฟ harnesses the deep-cleaning force of botanical extracts to lift stains,
-      neutralise odours, and restore the life of every fabric — without harsh chemicals.
+    <h1 data-lang-th="พลังธรรมชาติ<br /><em>สะอาดหมดจด</em><br />ทุกเส้นใย" data-lang-en="Nature's Power,<br /><em>Perfectly Clean</em><br />Upholstery.">พลังธรรมชาติ<br /><em>สะอาดหมดจด</em><br />ทุกเส้นใย</h1>
+    <p class="hero-desc" data-lang-th="เฟอนิเซิร์ฟ ใช้พลังของสารสกัดจากพืชเพื่อขจัดคราบ ดับกลิ่น และฟื้นฟูเนื้อผ้าทุกชนิด — ปราศจากสารเคมีอันตราย" data-lang-en="เฟอนิเซิร์ฟ harnesses the deep-cleaning force of botanical extracts to lift stains, neutralise odours, and restore the life of every fabric — without harsh chemicals.">
+      เฟอนิเซิร์ฟ ใช้พลังของสารสกัดจากพืชเพื่อขจัดคราบ ดับกลิ่น และฟื้นฟูเนื้อผ้าทุกชนิด — ปราศจากสารเคมีอันตราย
     </p>
     <div class="hero-actions">
       <a href="#products" class="btn-primary">
         <i data-lucide="shopping-bag"></i>
-        Shop Products
+        <span data-lang-th="ดูสินค้า" data-lang-en="Shop Products">ดูสินค้า</span>
       </a>
       <a href="#about" class="btn-outline">
         <i data-lucide="play-circle"></i>
-        Our Story
+        <span data-lang-th="เรื่องราวของเรา" data-lang-en="Our Story">เรื่องราวของเรา</span>
       </a>
     </div>
     <div class="hero-badges">
       <div class="hero-badge">
         <strong>98%</strong>
-        <span>Stain removal rate</span>
+        <span data-lang-th="ประสิทธิภาพขจัดคราบ" data-lang-en="Stain removal rate">ประสิทธิภาพขจัดคราบ</span>
       </div>
       <div class="hero-badge">
         <strong>50k+</strong>
-        <span>Happy households</span>
+        <span data-lang-th="ครัวเรือนที่พอใจ" data-lang-en="Happy households">ครัวเรือนที่พอใจ</span>
       </div>
       <div class="hero-badge">
         <strong>0</strong>
-        <span>Harsh chemicals</span>
+        <span data-lang-th="สารเคมีอันตราย" data-lang-en="Harsh chemicals">สารเคมีอันตราย</span>
       </div>
     </div>
   </div>
   <div class="hero-right">
     <img
       src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&h=900&fit=crop"
-      alt="Clean green fabric sofa"
+      alt="โซฟาผ้าสีเขียวสะอาด"
     />
     <div class="hero-leaf-badge">
       <div class="badge-icon">
         <i data-lucide="shield-check"></i>
       </div>
       <p>
-        <strong>Dermatologist Tested</strong>
-        Safe for pets &amp; children
+        <strong data-lang-th="ผ่านการทดสอบโดยแพทย์ผิวหนัง" data-lang-en="Dermatologist Tested">ผ่านการทดสอบโดยแพทย์ผิวหนัง</strong>
+        <span data-lang-th="ปลอดภัยสำหรับสัตว์เลี้ยงและเด็ก" data-lang-en="Safe for pets &amp; children">ปลอดภัยสำหรับสัตว์เลี้ยงและเด็ก</span>
       </p>
     </div>
   </div>
@@ -1074,20 +1169,20 @@
 
 <!-- ─── INGREDIENTS STRIP ─── -->
 <div class="ingredients-strip">
-  <div class="ingredient-tag"><i data-lucide="leaf"></i> Lemongrass Extract</div>
-  <div class="ingredient-tag"><i data-lucide="leaf"></i> Neem Leaf Enzyme</div>
-  <div class="ingredient-tag"><i data-lucide="leaf"></i> Peppermint Oil</div>
-  <div class="ingredient-tag"><i data-lucide="leaf"></i> Aloe Vera Complex</div>
-  <div class="ingredient-tag"><i data-lucide="leaf"></i> Green Tea Antioxidants</div>
-  <div class="ingredient-tag"><i data-lucide="leaf"></i> Citrus Bioflavonoids</div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> <span data-lang-th="สารสกัดตะไคร้" data-lang-en="Lemongrass Extract">สารสกัดตะไคร้</span></div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> <span data-lang-th="เอนไซม์ใบสะเดา" data-lang-en="Neem Leaf Enzyme">เอนไซม์ใบสะเดา</span></div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> <span data-lang-th="น้ำมันสะระแหน่" data-lang-en="Peppermint Oil">น้ำมันสะระแหน่</span></div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> <span data-lang-th="สารสกัดว่านหางจระเข้" data-lang-en="Aloe Vera Complex">สารสกัดว่านหางจระเข้</span></div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> <span data-lang-th="สารต้านอนุมูลอิสระจากชาเขียว" data-lang-en="Green Tea Antioxidants">สารต้านอนุมูลอิสระจากชาเขียว</span></div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> <span data-lang-th="ไบโอฟลาโวนอยด์จากส้ม" data-lang-en="Citrus Bioflavonoids">ไบโอฟลาโวนอยด์จากส้ม</span></div>
 </div>
 
 <!-- ─── PRODUCTS ─── -->
 <section class="products" id="products">
   <div class="section-header">
-    <span class="section-tag">Our Collection</span>
-    <h2>Botanically Formulated<br />Fabric Care</h2>
-    <p>Three targeted solutions for every upholstery challenge — from daily freshening to deep stain rescue.</p>
+    <span class="section-tag" data-lang-th="คอลเลกชันของเรา" data-lang-en="Our Collection">คอลเลกชันของเรา</span>
+    <h2 data-lang-th="ผลิตภัณฑ์ดูแลผ้า<br />จากสูตรพฤกษศาสตร์" data-lang-en="Botanically Formulated<br />Fabric Care">ผลิตภัณฑ์ดูแลผ้า<br />จากสูตรพฤกษศาสตร์</h2>
+    <p data-lang-th="สามสูตรเฉพาะสำหรับทุกปัญหาของเบาะและผ้า — ตั้งแต่การดูแลประจำวันไปจนถึงการกำจัดคราบเข้มข้น" data-lang-en="Three targeted solutions for every upholstery challenge — from daily freshening to deep stain rescue.">สามสูตรเฉพาะสำหรับทุกปัญหาของเบาะและผ้า — ตั้งแต่การดูแลประจำวันไปจนถึงการกำจัดคราบเข้มข้น</p>
   </div>
   <div class="products-grid">
 
@@ -1096,20 +1191,20 @@
       <img
         class="product-img"
         src="https://images.unsplash.com/photo-1643836361449-90d35fd14f1b?w=600&h=480&fit=crop"
-        alt="Herbal Upholstery Foam"
+        alt="โฟมทำความสะอาดสมุนไพร"
       />
       <div class="product-body">
-        <div class="product-tag">Bestseller</div>
-        <h3>Deep-Clean Botanical Foam</h3>
-        <p>Dense microfoam penetrates deep into woven fibres, dissolving grease, grime, and ground-in dirt on contact.</p>
+        <div class="product-tag" data-lang-th="ขายดีที่สุด" data-lang-en="Bestseller">ขายดีที่สุด</div>
+        <h3 data-lang-th="โฟมทำความสะอาดเชิงลึกจากพฤกษศาสตร์" data-lang-en="Deep-Clean Botanical Foam">โฟมทำความสะอาดเชิงลึกจากพฤกษศาสตร์</h3>
+        <p data-lang-th="ไมโครโฟมหนาแน่นซึมลึกเข้าสู่เส้นใยผ้า ละลายไขมัน สิ่งสกปรก และคราบฝังแน่นได้ทันที" data-lang-en="Dense microfoam penetrates deep into woven fibres, dissolving grease, grime, and ground-in dirt on contact.">ไมโครโฟมหนาแน่นซึมลึกเข้าสู่เส้นใยผ้า ละลายไขมัน สิ่งสกปรก และคราบฝังแน่นได้ทันที</p>
         <ul class="product-features">
-          <li><i data-lucide="check-circle-2"></i> Works on fabric, velvet &amp; microfibre</li>
-          <li><i data-lucide="check-circle-2"></i> No residue — rinse-free formula</li>
-          <li><i data-lucide="check-circle-2"></i> Scented with lemongrass &amp; mint</li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="ใช้ได้กับผ้า กำมะหยี่ และไมโครไฟเบอร์" data-lang-en="Works on fabric, velvet &amp; microfibre">ใช้ได้กับผ้า กำมะหยี่ และไมโครไฟเบอร์</span></li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="ไม่มีคราบตกค้าง — สูตรไม่ต้องล้างออก" data-lang-en="No residue — rinse-free formula">ไม่มีคราบตกค้าง — สูตรไม่ต้องล้างออก</span></li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="กลิ่นหอมตะไคร้และสะระแหน่" data-lang-en="Scented with lemongrass &amp; mint">กลิ่นหอมตะไคร้และสะระแหน่</span></li>
         </ul>
         <div class="product-price-row">
           <span class="product-price">฿ 390</span>
-          <a href="#cta" class="btn-sm">Add to Cart</a>
+          <a href="#cta" class="btn-sm" data-lang-th="หยิบใส่ตะกร้า" data-lang-en="Add to Cart">หยิบใส่ตะกร้า</a>
         </div>
       </div>
     </div>
@@ -1119,20 +1214,20 @@
       <img
         class="product-img"
         src="https://images.unsplash.com/photo-1700151573534-dcd72ed6daf3?w=600&h=480&fit=crop"
-        alt="Fabric Refresh Spray"
+        alt="สเปรย์ปรับอากาศผ้า"
       />
       <div class="product-body">
-        <div class="product-tag">Daily Use</div>
-        <h3>Herbal Fabric Refresh Spray</h3>
-        <p>A light botanical mist that neutralises odours and leaves fabrics smelling freshly laundered throughout the day.</p>
+        <div class="product-tag" data-lang-th="ใช้ได้ทุกวัน" data-lang-en="Daily Use">ใช้ได้ทุกวัน</div>
+        <h3 data-lang-th="สเปรย์ปรับอากาศผ้าสมุนไพร" data-lang-en="Herbal Fabric Refresh Spray">สเปรย์ปรับอากาศผ้าสมุนไพร</h3>
+        <p data-lang-th="ละอองพฤกษศาสตร์เบาสบายที่ช่วยดับกลิ่นและทำให้ผ้ามีกลิ่นหอมสดชื่นตลอดวัน" data-lang-en="A light botanical mist that neutralises odours and leaves fabrics smelling freshly laundered throughout the day.">ละอองพฤกษศาสตร์เบาสบายที่ช่วยดับกลิ่นและทำให้ผ้ามีกลิ่นหอมสดชื่นตลอดวัน</p>
         <ul class="product-features">
-          <li><i data-lucide="check-circle-2"></i> Instant odour neutralisation</li>
-          <li><i data-lucide="check-circle-2"></i> Green-tea antimicrobial barrier</li>
-          <li><i data-lucide="check-circle-2"></i> Suitable for curtains &amp; cushions</li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="ดับกลิ่นได้ทันที" data-lang-en="Instant odour neutralisation">ดับกลิ่นได้ทันที</span></li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="สารต้านเชื้อจากชาเขียว" data-lang-en="Green-tea antimicrobial barrier">สารต้านเชื้อจากชาเขียว</span></li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="เหมาะสำหรับผ้าม่านและหมอน" data-lang-en="Suitable for curtains &amp; cushions">เหมาะสำหรับผ้าม่านและหมอน</span></li>
         </ul>
         <div class="product-price-row">
           <span class="product-price">฿ 290</span>
-          <a href="#cta" class="btn-sm">Add to Cart</a>
+          <a href="#cta" class="btn-sm" data-lang-th="หยิบใส่ตะกร้า" data-lang-en="Add to Cart">หยิบใส่ตะกร้า</a>
         </div>
       </div>
     </div>
@@ -1142,20 +1237,20 @@
       <img
         class="product-img"
         src="https://images.unsplash.com/photo-1551772413-6c1b7dc18548?w=600&h=480&fit=crop"
-        alt="Stain Eraser Pen"
+        alt="ปากกาลบคราบ"
       />
       <div class="product-body">
-        <div class="product-tag">Spot Treatment</div>
-        <h3>Neem Enzyme Stain Eraser</h3>
-        <p>Targeted plant-enzyme action lifts coffee, wine, oil, and pet stains — even on delicate or light-coloured fabrics.</p>
+        <div class="product-tag" data-lang-th="ลบคราบเฉพาะจุด" data-lang-en="Spot Treatment">ลบคราบเฉพาะจุด</div>
+        <h3 data-lang-th="ตัวลบคราบเอนไซม์สะเดา" data-lang-en="Neem Enzyme Stain Eraser">ตัวลบคราบเอนไซม์สะเดา</h3>
+        <p data-lang-th="เอนไซม์จากพืชออกฤทธิ์เฉพาะจุด ขจัดคราบกาแฟ ไวน์ น้ำมัน และคราบสัตว์เลี้ยง แม้กระทั่งบนผ้าสีอ่อน" data-lang-en="Targeted plant-enzyme action lifts coffee, wine, oil, and pet stains — even on delicate or light-coloured fabrics.">เอนไซม์จากพืชออกฤทธิ์เฉพาะจุด ขจัดคราบกาแฟ ไวน์ น้ำมัน และคราบสัตว์เลี้ยง แม้กระทั่งบนผ้าสีอ่อน</p>
         <ul class="product-features">
-          <li><i data-lucide="check-circle-2"></i> Active neem leaf enzymes</li>
-          <li><i data-lucide="check-circle-2"></i> Safe on all colourfastness levels</li>
-          <li><i data-lucide="check-circle-2"></i> Biodegradable packaging</li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="เอนไซม์ใบสะเดาที่ออกฤทธิ์จริง" data-lang-en="Active neem leaf enzymes">เอนไซม์ใบสะเดาที่ออกฤทธิ์จริง</span></li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="ปลอดภัยกับทุกระดับความคงทนของสี" data-lang-en="Safe on all colourfastness levels">ปลอดภัยกับทุกระดับความคงทนของสี</span></li>
+          <li><i data-lucide="check-circle-2"></i> <span data-lang-th="บรรจุภัณฑ์ย่อยสลายได้ตามธรรมชาติ" data-lang-en="Biodegradable packaging">บรรจุภัณฑ์ย่อยสลายได้ตามธรรมชาติ</span></li>
         </ul>
         <div class="product-price-row">
           <span class="product-price">฿ 340</span>
-          <a href="#cta" class="btn-sm">Add to Cart</a>
+          <a href="#cta" class="btn-sm" data-lang-th="หยิบใส่ตะกร้า" data-lang-en="Add to Cart">หยิบใส่ตะกร้า</a>
         </div>
       </div>
     </div>
@@ -1166,38 +1261,38 @@
 <!-- ─── FEATURES ─── -->
 <section class="features" id="features">
   <div class="section-header">
-    <span class="section-tag">Why เฟอนิเซิร์ฟ</span>
-    <h2>Science Rooted in Nature</h2>
-    <p>Every bottle is the result of rigorous botanical research and a commitment to clean-label chemistry.</p>
+    <span class="section-tag" data-lang-th="ทำไมต้องเลือกเฟอนิเซิร์ฟ" data-lang-en="Why เฟอนิเซิร์ฟ">ทำไมต้องเลือกเฟอนิเซิร์ฟ</span>
+    <h2 data-lang-th="วิทยาศาสตร์ที่หยั่งรากจากธรรมชาติ" data-lang-en="Science Rooted in Nature">วิทยาศาสตร์ที่หยั่งรากจากธรรมชาติ</h2>
+    <p data-lang-th="ทุกขวดคือผลลัพธ์จากการวิจัยพฤกษศาสตร์อย่างเข้มข้น และความมุ่งมั่นด้านเคมีที่โปร่งใส" data-lang-en="Every bottle is the result of rigorous botanical research and a commitment to clean-label chemistry.">ทุกขวดคือผลลัพธ์จากการวิจัยพฤกษศาสตร์อย่างเข้มข้น และความมุ่งมั่นด้านเคมีที่โปร่งใส</p>
   </div>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">
         <i data-lucide="flask-conical"></i>
       </div>
-      <h3>Plant Enzyme Technology</h3>
-      <p>Active enzymes from neem and papaya break down stain molecules at the molecular level, not just mask them.</p>
+      <h3 data-lang-th="เทคโนโลยีเอนไซม์จากพืช" data-lang-en="Plant Enzyme Technology">เทคโนโลยีเอนไซม์จากพืช</h3>
+      <p data-lang-th="เอนไซม์จากสะเดาและมะละกอออกฤทธิ์สลายโมเลกุลคราบในระดับโมเลกุล ไม่ใช่แค่ปิดบัง" data-lang-en="Active enzymes from neem and papaya break down stain molecules at the molecular level, not just mask them.">เอนไซม์จากสะเดาและมะละกอออกฤทธิ์สลายโมเลกุลคราบในระดับโมเลกุล ไม่ใช่แค่ปิดบัง</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">
         <i data-lucide="wind"></i>
       </div>
-      <h3>Odour-Elimination System</h3>
-      <p>Our citrus bioflavonoid complex binds to odour-causing compounds and eliminates them on contact — no synthetic fragrance cover-ups.</p>
+      <h3 data-lang-th="ระบบกำจัดกลิ่น" data-lang-en="Odour-Elimination System">ระบบกำจัดกลิ่น</h3>
+      <p data-lang-th="สารไบโอฟลาโวนอยด์จากส้มของเราจับกับสารก่อกลิ่นและกำจัดออกทันที — ไม่มีน้ำหอมสังเคราะห์ปิดบัง" data-lang-en="Our citrus bioflavonoid complex binds to odour-causing compounds and eliminates them on contact — no synthetic fragrance cover-ups.">สารไบโอฟลาโวนอยด์จากส้มของเราจับกับสารก่อกลิ่นและกำจัดออกทันที — ไม่มีน้ำหอมสังเคราะห์ปิดบัง</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">
         <i data-lucide="heart-pulse"></i>
       </div>
-      <h3>Non-Toxic & Hypoallergenic</h3>
-      <p>Free from phosphates, parabens, and optical brighteners. Tested by independent dermatologists for sensitive skin households.</p>
+      <h3 data-lang-th="ปลอดสารพิษ &amp; ไม่ก่อภูมิแพ้" data-lang-en="Non-Toxic &amp; Hypoallergenic">ปลอดสารพิษ &amp; ไม่ก่อภูมิแพ้</h3>
+      <p data-lang-th="ปราศจากฟอสเฟต พาราเบน และสารเพิ่มความสว่าง ผ่านการทดสอบโดยแพทย์ผิวหนังอิสระสำหรับครัวเรือนผิวแพ้ง่าย" data-lang-en="Free from phosphates, parabens, and optical brighteners. Tested by independent dermatologists for sensitive skin households.">ปราศจากฟอสเฟต พาราเบน และสารเพิ่มความสว่าง ผ่านการทดสอบโดยแพทย์ผิวหนังอิสระสำหรับครัวเรือนผิวแพ้ง่าย</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">
         <i data-lucide="recycle"></i>
       </div>
-      <h3>Sustainably Sourced</h3>
-      <p>All botanical ingredients are traceable to certified organic farms in Thailand. Packaging uses 80% post-consumer recycled material.</p>
+      <h3 data-lang-th="วัตถุดิบอย่างยั่งยืน" data-lang-en="Sustainably Sourced">วัตถุดิบอย่างยั่งยืน</h3>
+      <p data-lang-th="ส่วนผสมพฤกษศาสตร์ทุกชนิดตรวจสอบได้จากฟาร์มออร์แกนิกรับรองในประเทศไทย บรรจุภัณฑ์ใช้วัสดุรีไซเคิล 80%" data-lang-en="All botanical ingredients are traceable to certified organic farms in Thailand. Packaging uses 80% post-consumer recycled material.">ส่วนผสมพฤกษศาสตร์ทุกชนิดตรวจสอบได้จากฟาร์มออร์แกนิกรับรองในประเทศไทย บรรจุภัณฑ์ใช้วัสดุรีไซเคิล 80%</p>
     </div>
   </div>
 </section>
@@ -1205,27 +1300,27 @@
 <!-- ─── SOCIAL PROOF ─── -->
 <section class="proof" id="proof">
   <div class="section-header">
-    <span class="section-tag">Trusted by Thousands</span>
-    <h2>Real Results,<br />Real Homes</h2>
-    <p>From family living rooms to boutique hotels — the results speak for themselves.</p>
+    <span class="section-tag" data-lang-th="เชื่อใจโดยผู้ใช้นับพัน" data-lang-en="Trusted by Thousands">เชื่อใจโดยผู้ใช้นับพัน</span>
+    <h2 data-lang-th="ผลลัพธ์จริง<br />ในบ้านจริง" data-lang-en="Real Results,<br />Real Homes">ผลลัพธ์จริง<br />ในบ้านจริง</h2>
+    <p data-lang-th="จากห้องนั่งเล่นในครอบครัวไปจนถึงโรงแรมบูติก — ผลลัพธ์พูดแทนตัวเอง" data-lang-en="From family living rooms to boutique hotels — the results speak for themselves.">จากห้องนั่งเล่นในครอบครัวไปจนถึงโรงแรมบูติก — ผลลัพธ์พูดแทนตัวเอง</p>
   </div>
 
   <div class="stats-row">
     <div class="stat">
       <strong>50,000+</strong>
-      <span>Units sold</span>
+      <span data-lang-th="ยอดขายรวม" data-lang-en="Units sold">ยอดขายรวม</span>
     </div>
     <div class="stat">
       <strong>4.9</strong>
-      <span>Average rating</span>
+      <span data-lang-th="คะแนนเฉลี่ย" data-lang-en="Average rating">คะแนนเฉลี่ย</span>
     </div>
     <div class="stat">
       <strong>98%</strong>
-      <span>Would recommend</span>
+      <span data-lang-th="แนะนำให้ผู้อื่น" data-lang-en="Would recommend">แนะนำให้ผู้อื่น</span>
     </div>
     <div class="stat">
       <strong>8+</strong>
-      <span>Years of research</span>
+      <span data-lang-th="ปีแห่งการวิจัย" data-lang-en="Years of research">ปีแห่งการวิจัย</span>
     </div>
   </div>
 
@@ -1234,48 +1329,48 @@
       <div class="testi-stars">
         <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
       </div>
-      <blockquote>
-        "My velvet sofa had a massive red wine stain I had given up on. The Neem Enzyme Stain Eraser lifted it completely in under ten minutes. I genuinely could not believe it. This is now a permanent fixture in my cleaning cabinet."
+      <blockquote data-lang-th="&ldquo;โซฟากำมะหยี่ของดิฉันมีคราบไวน์แดงขนาดใหญ่ที่คิดว่าเอาออกไม่ได้แล้ว แต่ตัวลบคราบเอนไซม์สะเดาช่วยขจัดออกได้หมดในเวลาไม่ถึงสิบนาที ไม่น่าเชื่อจริงๆ ตอนนี้เป็นสิ่งที่ขาดไม่ได้ในตู้ทำความสะอาดเลย&rdquo;" data-lang-en="&ldquo;My velvet sofa had a massive red wine stain I had given up on. The Neem Enzyme Stain Eraser lifted it completely in under ten minutes. I genuinely could not believe it. This is now a permanent fixture in my cleaning cabinet.&rdquo;">
+        &ldquo;โซฟากำมะหยี่ของดิฉันมีคราบไวน์แดงขนาดใหญ่ที่คิดว่าเอาออกไม่ได้แล้ว แต่ตัวลบคราบเอนไซม์สะเดาช่วยขจัดออกได้หมดในเวลาไม่ถึงสิบนาที ไม่น่าเชื่อจริงๆ ตอนนี้เป็นสิ่งที่ขาดไม่ได้ในตู้ทำความสะอาดเลย&rdquo;
       </blockquote>
       <div class="testi-author">
         <img class="testi-avatar" src="https://picsum.photos/seed/kunying/80/80" alt="Kunying portrait" />
         <div>
           <div class="testi-name">Kunying Phasuk</div>
-          <div class="testi-role">Interior Designer, Bangkok</div>
+          <div class="testi-role" data-lang-th="นักออกแบบตกแต่งภายใน, กรุงเทพฯ" data-lang-en="Interior Designer, Bangkok">นักออกแบบตกแต่งภายใน, กรุงเทพฯ</div>
         </div>
-        <span class="testi-tag">Verified</span>
+        <span class="testi-tag" data-lang-th="ยืนยันแล้ว" data-lang-en="Verified">ยืนยันแล้ว</span>
       </div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">
         <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
       </div>
-      <blockquote>
-        "We use the Herbal Fabric Refresh Spray daily across our 12-room guesthouse. Guests constantly ask what smells so lovely. The lemongrass scent is clean and natural — not overpowering at all. Reordering every month."
+      <blockquote data-lang-th="&ldquo;เราใช้สเปรย์ปรับอากาศผ้าสมุนไพรทุกวันในเกสต์เฮาส์ 12 ห้องของเรา แขกถามตลอดว่ากลิ่นหอมอะไร กลิ่นตะไคร้สะอาดและเป็นธรรมชาติ ไม่ฉุนเลย สั่งซื้อใหม่ทุกเดือน&rdquo;" data-lang-en="&ldquo;We use the Herbal Fabric Refresh Spray daily across our 12-room guesthouse. Guests constantly ask what smells so lovely. The lemongrass scent is clean and natural — not overpowering at all. Reordering every month.&rdquo;">
+        &ldquo;เราใช้สเปรย์ปรับอากาศผ้าสมุนไพรทุกวันในเกสต์เฮาส์ 12 ห้องของเรา แขกถามตลอดว่ากลิ่นหอมอะไร กลิ่นตะไคร้สะอาดและเป็นธรรมชาติ ไม่ฉุนเลย สั่งซื้อใหม่ทุกเดือน&rdquo;
       </blockquote>
       <div class="testi-author">
         <img class="testi-avatar" src="https://picsum.photos/seed/arkon42/80/80" alt="Arkon portrait" />
         <div>
           <div class="testi-name">Arkon Chai-anan</div>
-          <div class="testi-role">Guesthouse Owner, Chiang Mai</div>
+          <div class="testi-role" data-lang-th="เจ้าของเกสต์เฮาส์, เชียงใหม่" data-lang-en="Guesthouse Owner, Chiang Mai">เจ้าของเกสต์เฮาส์, เชียงใหม่</div>
         </div>
-        <span class="testi-tag">Verified</span>
+        <span class="testi-tag" data-lang-th="ยืนยันแล้ว" data-lang-en="Verified">ยืนยันแล้ว</span>
       </div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">
         <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
       </div>
-      <blockquote>
-        "I have two cats and a toddler — my sofa takes a beating. The Deep-Clean Botanical Foam handles pet hair, muddy handprints, and mystery stains alike. The fact that it has no harsh chemicals gives me real peace of mind."
+      <blockquote data-lang-th="&ldquo;มีแมวสองตัวและลูกวัยเตาะแตะ โซฟาโดนทำร้ายทุกวัน โฟมทำความสะอาดเชิงลึกจัดการขนแมว รอยเปื้อนโคลน และคราบแปลกประหลาดได้ทุกอย่าง รู้สึกสบายใจที่ไม่มีสารเคมีอันตรายเลย&rdquo;" data-lang-en="&ldquo;I have two cats and a toddler — my sofa takes a beating. The Deep-Clean Botanical Foam handles pet hair, muddy handprints, and mystery stains alike. The fact that it has no harsh chemicals gives me real peace of mind.&rdquo;">
+        &ldquo;มีแมวสองตัวและลูกวัยเตาะแตะ โซฟาโดนทำร้ายทุกวัน โฟมทำความสะอาดเชิงลึกจัดการขนแมว รอยเปื้อนโคลน และคราบแปลกประหลาดได้ทุกอย่าง รู้สึกสบายใจที่ไม่มีสารเคมีอันตรายเลย&rdquo;
       </blockquote>
       <div class="testi-author">
         <img class="testi-avatar" src="https://picsum.photos/seed/nangfah/80/80" alt="Nangfah portrait" />
         <div>
           <div class="testi-name">Nangfah Lorpracha</div>
-          <div class="testi-role">Mother of two, Phuket</div>
+          <div class="testi-role" data-lang-th="คุณแม่ลูกสอง, ภูเก็ต" data-lang-en="Mother of two, Phuket">คุณแม่ลูกสอง, ภูเก็ต</div>
         </div>
-        <span class="testi-tag">Verified</span>
+        <span class="testi-tag" data-lang-th="ยืนยันแล้ว" data-lang-en="Verified">ยืนยันแล้ว</span>
       </div>
     </div>
   </div>
@@ -1288,62 +1383,57 @@
       <img
         class="about-img-main"
         src="https://images.unsplash.com/photo-1584204559709-ca7d413229eb?w=700&h=800&fit=crop"
-        alt="Botanical plant extract"
+        alt="สารสกัดจากพืชพฤกษศาสตร์"
       />
       <img
         class="about-img-accent"
         src="https://images.unsplash.com/photo-1686178827149-6d55c72d81df?w=400&h=400&fit=crop"
-        alt="Cleaning upholstery"
+        alt="การทำความสะอาดเบาะ"
       />
       <div class="about-pill">
         <i data-lucide="award"></i>
-        Founded in Chiang Mai, 2016
+        <span data-lang-th="ก่อตั้งที่เชียงใหม่ พ.ศ. 2559" data-lang-en="Founded in Chiang Mai, 2016">ก่อตั้งที่เชียงใหม่ พ.ศ. 2559</span>
       </div>
     </div>
     <div class="about-content">
-      <span class="section-tag">Our Story</span>
-      <h2>Born from the<br /><em>Thai Herb Garden</em></h2>
-      <p>
-        เฟอนิเซิร์ฟ began in a small apothecary laboratory in Chiang Mai's old city, where our founder
-        Praphatsorn Wongwan spent years studying the cleaning properties of local medicinal plants —
-        neem, lemongrass, kaffir lime, and turmeric root.
+      <span class="section-tag" data-lang-th="เรื่องราวของเรา" data-lang-en="Our Story">เรื่องราวของเรา</span>
+      <h2 data-lang-th="เกิดจาก<br /><em>สวนสมุนไพรไทย</em>" data-lang-en="Born from the<br /><em>Thai Herb Garden</em>">เกิดจาก<br /><em>สวนสมุนไพรไทย</em></h2>
+      <p data-lang-th="เฟอนิเซิร์ฟ เริ่มต้นในห้องปฏิบัติการเภสัชกรรมเล็กๆ ในเมืองเก่าเชียงใหม่ ที่ซึ่งผู้ก่อตั้งของเรา ประภัสสร วงศ์วาน ใช้เวลาหลายปีศึกษาคุณสมบัติการทำความสะอาดของพืชสมุนไพรท้องถิ่น ได้แก่ สะเดา ตะไคร้ มะกรูด และขมิ้น" data-lang-en="เฟอนิเซิร์ฟ began in a small apothecary laboratory in Chiang Mai's old city, where our founder Praphatsorn Wongwan spent years studying the cleaning properties of local medicinal plants — neem, lemongrass, kaffir lime, and turmeric root.">
+        เฟอนิเซิร์ฟ เริ่มต้นในห้องปฏิบัติการเภสัชกรรมเล็กๆ ในเมืองเก่าเชียงใหม่ ที่ซึ่งผู้ก่อตั้งของเรา ประภัสสร วงศ์วาน ใช้เวลาหลายปีศึกษาคุณสมบัติการทำความสะอาดของพืชสมุนไพรท้องถิ่น ได้แก่ สะเดา ตะไคร้ มะกรูด และขมิ้น
       </p>
-      <p>
-        What started as a personal obsession with replacing her home's harsh chemical cleaners became
-        a decade-long mission: proving that botanical compounds could outperform synthetic detergents,
-        not just match them. Every formula in our range is the product of that research.
+      <p data-lang-th="จากความหลงใหลส่วนตัวในการแทนที่น้ำยาทำความสะอาดสารเคมีในบ้าน กลายมาเป็นภารกิจกว่าทศวรรษ: พิสูจน์ว่าสารพฤกษศาสตร์สามารถทำงานได้เหนือกว่าผงซักฟอกสังเคราะห์ ไม่ใช่แค่เท่าเทียม" data-lang-en="What started as a personal obsession with replacing her home's harsh chemical cleaners became a decade-long mission: proving that botanical compounds could outperform synthetic detergents, not just match them. Every formula in our range is the product of that research.">
+        จากความหลงใหลส่วนตัวในการแทนที่น้ำยาทำความสะอาดสารเคมีในบ้าน กลายมาเป็นภารกิจกว่าทศวรรษ: พิสูจน์ว่าสารพฤกษศาสตร์สามารถทำงานได้เหนือกว่าผงซักฟอกสังเคราะห์ ไม่ใช่แค่เท่าเทียม
       </p>
-      <p>
-        Today, เฟอนิเซิร์ฟ products are trusted in homes, hotels, and clinics across Thailand —
-        all without a single phosphate, optical brightener, or synthetic preservative.
+      <p data-lang-th="วันนี้ ผลิตภัณฑ์เฟอนิเซิร์ฟเป็นที่เชื่อถือในบ้าน โรงแรม และคลินิกทั่วประเทศไทย — ทั้งหมดปราศจากฟอสเฟต สารเพิ่มความสว่าง และสารกันบูดสังเคราะห์แม้แต่ชนิดเดียว" data-lang-en="Today, เฟอนิเซิร์ฟ products are trusted in homes, hotels, and clinics across Thailand — all without a single phosphate, optical brightener, or synthetic preservative.">
+        วันนี้ ผลิตภัณฑ์เฟอนิเซิร์ฟเป็นที่เชื่อถือในบ้าน โรงแรม และคลินิกทั่วประเทศไทย — ทั้งหมดปราศจากฟอสเฟต สารเพิ่มความสว่าง และสารกันบูดสังเคราะห์แม้แต่ชนิดเดียว
       </p>
       <div class="about-values">
         <div class="about-value">
           <div class="about-value-icon"><i data-lucide="microscope"></i></div>
           <div>
-            <h4>Science-led</h4>
-            <p>Every ingredient validated by our in-house lab</p>
+            <h4 data-lang-th="นำด้วยวิทยาศาสตร์" data-lang-en="Science-led">นำด้วยวิทยาศาสตร์</h4>
+            <p data-lang-th="ส่วนผสมทุกชนิดผ่านการตรวจสอบโดยห้องปฏิบัติการภายใน" data-lang-en="Every ingredient validated by our in-house lab">ส่วนผสมทุกชนิดผ่านการตรวจสอบโดยห้องปฏิบัติการภายใน</p>
           </div>
         </div>
         <div class="about-value">
           <div class="about-value-icon"><i data-lucide="sprout"></i></div>
           <div>
-            <h4>Botanically pure</h4>
-            <p>No synthetics, ever — in formula or fragrance</p>
+            <h4 data-lang-th="บริสุทธิ์จากพืช" data-lang-en="Botanically pure">บริสุทธิ์จากพืช</h4>
+            <p data-lang-th="ไม่มีสารสังเคราะห์เลย — ทั้งสูตรและกลิ่น" data-lang-en="No synthetics, ever — in formula or fragrance">ไม่มีสารสังเคราะห์เลย — ทั้งสูตรและกลิ่น</p>
           </div>
         </div>
         <div class="about-value">
           <div class="about-value-icon"><i data-lucide="globe-2"></i></div>
           <div>
-            <h4>Thai-grown</h4>
-            <p>Supporting local organic herb farmers</p>
+            <h4 data-lang-th="ปลูกในไทย" data-lang-en="Thai-grown">ปลูกในไทย</h4>
+            <p data-lang-th="สนับสนุนเกษตรกรสมุนไพรออร์แกนิกในท้องถิ่น" data-lang-en="Supporting local organic herb farmers">สนับสนุนเกษตรกรสมุนไพรออร์แกนิกในท้องถิ่น</p>
           </div>
         </div>
         <div class="about-value">
           <div class="about-value-icon"><i data-lucide="package-2"></i></div>
           <div>
-            <h4>Low-waste</h4>
-            <p>Refillable packaging available for all SKUs</p>
+            <h4 data-lang-th="ลดของเสีย" data-lang-en="Low-waste">ลดของเสีย</h4>
+            <p data-lang-th="มีบรรจุภัณฑ์รีฟิลสำหรับทุกผลิตภัณฑ์" data-lang-en="Refillable packaging available for all SKUs">มีบรรจุภัณฑ์รีฟิลสำหรับทุกผลิตภัณฑ์</p>
           </div>
         </div>
       </div>
@@ -1353,20 +1443,19 @@
 
 <!-- ─── CTA BAND ─── -->
 <section class="cta-band" id="cta">
-  <span class="section-tag">Start Today</span>
-  <h2>Give Your Furniture<br />the Care It Deserves</h2>
-  <p>
-    Order before 2 pm and receive same-day dispatch across Bangkok.
-    Free nationwide shipping on orders over ฿ 800.
+  <span class="section-tag" data-lang-th="เริ่มต้นวันนี้" data-lang-en="Start Today">เริ่มต้นวันนี้</span>
+  <h2 data-lang-th="มอบการดูแลที่เฟอร์นิเจอร์<br />ของคุณสมควรได้รับ" data-lang-en="Give Your Furniture<br />the Care It Deserves">มอบการดูแลที่เฟอร์นิเจอร์<br />ของคุณสมควรได้รับ</h2>
+  <p data-lang-th="สั่งก่อนบ่าย 2 โมง รับการจัดส่งภายในวันเดียวกันทั่วกรุงเทพฯ จัดส่งฟรีทั่วประเทศสำหรับคำสั่งซื้อเกิน ฿ 800" data-lang-en="Order before 2 pm and receive same-day dispatch across Bangkok. Free nationwide shipping on orders over ฿ 800.">
+    สั่งก่อนบ่าย 2 โมง รับการจัดส่งภายในวันเดียวกันทั่วกรุงเทพฯ จัดส่งฟรีทั่วประเทศสำหรับคำสั่งซื้อเกิน ฿ 800
   </p>
   <div class="cta-actions">
     <a href="#products" class="btn-primary">
       <i data-lucide="shopping-bag"></i>
-      Shop the Full Range
+      <span data-lang-th="ดูสินค้าทั้งหมด" data-lang-en="Shop the Full Range">ดูสินค้าทั้งหมด</span>
     </a>
     <a href="#about" class="btn-outline">
       <i data-lucide="mail"></i>
-      Contact Us
+      <span data-lang-th="ติดต่อเรา" data-lang-en="Contact Us">ติดต่อเรา</span>
     </a>
   </div>
 </section>
@@ -1376,9 +1465,8 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#" class="nav-logo">เฟอนิเซิร์ฟ<span>.</span></a>
-      <p>
-        Plant-powered upholstery care crafted in Thailand.
-        Clean formulas for cleaner homes — naturally.
+      <p data-lang-th="ผลิตภัณฑ์ดูแลเบาะและผ้าจากพลังพืช สร้างสรรค์ในประเทศไทย สูตรสะอาดเพื่อบ้านที่สะอาดกว่า — อย่างเป็นธรรมชาติ" data-lang-en="Plant-powered upholstery care crafted in Thailand. Clean formulas for cleaner homes — naturally.">
+        ผลิตภัณฑ์ดูแลเบาะและผ้าจากพลังพืช สร้างสรรค์ในประเทศไทย สูตรสะอาดเพื่อบ้านที่สะอาดกว่า — อย่างเป็นธรรมชาติ
       </p>
       <div class="footer-social">
         <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
@@ -1389,29 +1477,29 @@
     </div>
 
     <div class="footer-col">
-      <h4>Products</h4>
+      <h4 data-lang-th="สินค้า" data-lang-en="Products">สินค้า</h4>
       <ul>
-        <li><a href="#">Botanical Foam</a></li>
-        <li><a href="#">Refresh Spray</a></li>
-        <li><a href="#">Stain Eraser</a></li>
-        <li><a href="#">Starter Bundle</a></li>
-        <li><a href="#">Refill Packs</a></li>
+        <li><a href="#" data-lang-th="โฟมพฤกษศาสตร์" data-lang-en="Botanical Foam">โฟมพฤกษศาสตร์</a></li>
+        <li><a href="#" data-lang-th="สเปรย์ปรับอากาศ" data-lang-en="Refresh Spray">สเปรย์ปรับอากาศ</a></li>
+        <li><a href="#" data-lang-th="ตัวลบคราบ" data-lang-en="Stain Eraser">ตัวลบคราบ</a></li>
+        <li><a href="#" data-lang-th="ชุดสตาร์ตเตอร์" data-lang-en="Starter Bundle">ชุดสตาร์ตเตอร์</a></li>
+        <li><a href="#" data-lang-th="แพ็กรีฟิล" data-lang-en="Refill Packs">แพ็กรีฟิล</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>Company</h4>
+      <h4 data-lang-th="บริษัท" data-lang-en="Company">บริษัท</h4>
       <ul>
-        <li><a href="#about">Our Story</a></li>
-        <li><a href="#">Ingredients</a></li>
-        <li><a href="#">Sustainability</a></li>
-        <li><a href="#">Press &amp; Media</a></li>
-        <li><a href="#">Stockists</a></li>
+        <li><a href="#about" data-lang-th="เรื่องราวของเรา" data-lang-en="Our Story">เรื่องราวของเรา</a></li>
+        <li><a href="#" data-lang-th="ส่วนผสม" data-lang-en="Ingredients">ส่วนผสม</a></li>
+        <li><a href="#" data-lang-th="ความยั่งยืน" data-lang-en="Sustainability">ความยั่งยืน</a></li>
+        <li><a href="#" data-lang-th="สื่อมวลชน" data-lang-en="Press &amp; Media">สื่อมวลชน</a></li>
+        <li><a href="#" data-lang-th="ตัวแทนจำหน่าย" data-lang-en="Stockists">ตัวแทนจำหน่าย</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>Contact</h4>
+      <h4 data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</h4>
       <div class="footer-contact-item">
         <i data-lucide="map-pin"></i>
         <span>142/7 Nimman Soi 7, Chiang Mai 50200, Thailand</span>
@@ -1426,23 +1514,74 @@
       </div>
       <div class="footer-contact-item">
         <i data-lucide="clock"></i>
-        <span>Mon–Fri, 9:00–18:00 (ICT)</span>
+        <span data-lang-th="จันทร์–ศุกร์ 9:00–18:00 น. (ICT)" data-lang-en="Mon–Fri, 9:00–18:00 (ICT)">จันทร์–ศุกร์ 9:00–18:00 น. (ICT)</span>
       </div>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2026 เฟอนิเซิร์ฟ Co., Ltd. All rights reserved.</p>
+    <p data-lang-th="&copy; 2026 เฟอนิเซิร์ฟ Co., Ltd. สงวนลิขสิทธิ์ทุกประการ" data-lang-en="&copy; 2026 เฟอนิเซิร์ฟ Co., Ltd. All rights reserved.">&copy; 2026 เฟอนิเซิร์ฟ Co., Ltd. สงวนลิขสิทธิ์ทุกประการ</p>
     <div class="footer-bottom-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Use</a>
-      <a href="#">Cookie Settings</a>
+      <a href="#" data-lang-th="นโยบายความเป็นส่วนตัว" data-lang-en="Privacy Policy">นโยบายความเป็นส่วนตัว</a>
+      <a href="#" data-lang-th="เงื่อนไขการใช้งาน" data-lang-en="Terms of Use">เงื่อนไขการใช้งาน</a>
+      <a href="#" data-lang-th="ตั้งค่าคุกกี้" data-lang-en="Cookie Settings">ตั้งค่าคุกกี้</a>
     </div>
   </div>
 </footer>
 
 <script>
   lucide.createIcons();
+
+  (function () {
+    var STORAGE_KEY = 'fnserv-lang';
+
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+
+      // Update all data-lang-* elements
+      document.querySelectorAll('[data-lang-th]').forEach(function (el) {
+        var text = el.getAttribute('data-lang-' + lang);
+        if (!text) return;
+        // For elements that contain HTML (h1, h2 with <br>/<em>)
+        if (el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'BLOCKQUOTE') {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
+      });
+
+      // Update lang switcher buttons
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        var isActive = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      // Update page title and meta description
+      if (lang === 'th') {
+        document.title = 'เฟอนิเซิร์ฟ — ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากสมุนไพร';
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', 'เฟอนิเซิร์ฟ ผลิตภัณฑ์ทำความสะอาดเบาะและผ้าคลุมเฟอร์นิเจอร์จากสารสกัดพืชธรรมชาติ ปราศจากสารเคมีอันตราย ปลอดภัยสำหรับทุกครอบครัว');
+      } else {
+        document.title = 'เฟอนิเซิร์ฟ — Herbal Upholstery Care';
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', 'เฟอนิเซิร์ฟ — plant-powered upholstery care crafted in Thailand. Clean botanical formulas, zero harsh chemicals, safe for the whole family.');
+      }
+
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
+
+    // Attach switcher click handlers
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLang(btn.getAttribute('data-lang'));
+      });
+    });
+
+    // Boot with stored or default (Thai) language
+    var stored = localStorage.getItem(STORAGE_KEY);
+    applyLang(stored === 'en' ? 'en' : 'th');
+  })();
 </script>
 </body>
 </html>
