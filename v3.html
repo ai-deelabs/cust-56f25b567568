@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เฟอนิเซิร์ฟ — Botanical Upholstery Cleaners</title>
+  <title>เฟอนิเซิร์ฟ — ผลิตภัณฑ์ทำความสะอาดเฟอร์นิเจอร์จากพืช</title>
+  <meta name="description" content="ผลิตภัณฑ์ทำความสะอาดเฟอร์นิเจอร์จากพืชธรรมชาติ ผสมจากสมุนไพร 15 ชนิด อ่อนโยนต่อผ้า ปลอดภัยสำหรับครอบครัว และเป็นมิตรกับสิ่งแวดล้อม">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@0.460.0"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,10 +34,12 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', 'Sukhumvit Set', serif;
       background: var(--cream);
       color: var(--text-dark);
       overflow-x: hidden;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     /* ── NAV ── */
@@ -64,7 +67,7 @@
     .logo-name span { color: var(--lime); }
     .logo-sub {
       display: block;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.52rem;
       font-weight: 400;
       letter-spacing: 0.3em;
@@ -80,7 +83,7 @@
       list-style: none;
     }
     .nav-links a {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.85rem;
       font-weight: 500;
       color: var(--text-on-dark-muted);
@@ -91,7 +94,7 @@
     .nav-links a:hover { color: var(--cream); }
 
     .nav-cta {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--darkest);
@@ -103,6 +106,36 @@
       transition: background 0.2s, transform 0.2s;
     }
     .nav-cta:hover { background: #90d46e; transform: translateY(-1px); }
+
+    /* ── LANG SWITCHER ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.1rem;
+      margin-left: 0.75rem;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-on-dark-muted);
+      cursor: pointer;
+      padding: 0.28rem 0.4rem;
+      border-radius: 0.25rem;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+    .lang-btn:hover { color: var(--cream); }
+    .lang-btn.active { color: var(--lime); }
+    .lang-sep {
+      color: rgba(138, 184, 152, 0.3);
+      font-size: 0.7rem;
+      user-select: none;
+      pointer-events: none;
+    }
 
     .nav-toggle {
       display: none;
@@ -146,7 +179,7 @@
     }
 
     .eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.28em;
@@ -168,7 +201,7 @@
     }
 
     .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', 'Noto Serif Thai', serif;
       font-size: clamp(3rem, 5.5vw, 5.8rem);
       font-weight: 300;
       line-height: 1.06;
@@ -182,7 +215,7 @@
     }
 
     .hero-sub {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 1rem;
       line-height: 1.75;
       color: var(--text-on-dark-muted);
@@ -198,7 +231,7 @@
     }
 
     .btn-primary {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.88rem;
       font-weight: 600;
       color: var(--darkest);
@@ -220,7 +253,7 @@
     .btn-primary i, .btn-outline i { width: 16px; height: 16px; }
 
     .btn-outline {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.88rem;
       font-weight: 500;
       color: var(--cream);
@@ -249,7 +282,7 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.77rem;
       font-weight: 400;
       color: var(--text-on-dark-muted);
@@ -308,7 +341,7 @@
       line-height: 1.2;
     }
     .float-label {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.68rem;
       color: var(--text-muted);
     }
@@ -335,7 +368,7 @@
       line-height: 1;
     }
     .hero-circle-badge small {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.48rem;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -404,14 +437,14 @@
     }
     .products-header .eyebrow { color: var(--lime); margin-bottom: 0.7rem; display: block; }
     .section-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', 'Noto Serif Thai', serif;
       font-size: clamp(2rem, 3.8vw, 3.4rem);
       font-weight: 300;
       line-height: 1.1;
     }
     .products-header .section-title { color: var(--cream); }
     .see-all-link {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.82rem;
       font-weight: 500;
       color: var(--sage-light);
@@ -452,7 +485,7 @@
     .product-body { padding: 1.4rem; }
     .product-tag {
       display: inline-block;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.62rem;
       font-weight: 600;
       letter-spacing: 0.18em;
@@ -472,7 +505,7 @@
       margin-bottom: 0.45rem;
     }
     .product-desc {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 0.86rem;
       line-height: 1.65;
       color: var(--text-on-dark-muted);
@@ -495,7 +528,7 @@
       color: var(--text-on-dark-muted);
     }
     .product-btn {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.78rem;
       font-weight: 600;
       color: var(--darkest);
@@ -577,14 +610,14 @@
       justify-content: center;
     }
     .step h3 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.97rem;
       font-weight: 600;
       color: var(--text-dark);
       margin-bottom: 0.5rem;
     }
     .step p {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 0.86rem;
       line-height: 1.7;
       color: var(--text-mid);
@@ -619,7 +652,7 @@
       margin-bottom: 0.3rem;
     }
     .stat-lbl {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.78rem;
       font-weight: 400;
       color: var(--text-on-dark-muted);
@@ -674,7 +707,7 @@
     .stars i { width: 13px; height: 13px; color: var(--lime); }
 
     .testi-quote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', 'Noto Serif Thai', serif;
       font-style: italic;
       font-size: 1.12rem;
       line-height: 1.65;
@@ -699,7 +732,7 @@
       color: var(--text-dark);
     }
     .testi-role {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.72rem;
       color: var(--text-muted);
     }
@@ -751,7 +784,7 @@
     .about-text.dark .section-title em { color: var(--sage-pale); }
 
     .about-body {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 0.96rem;
       line-height: 1.8;
       margin-bottom: 1.2rem;
@@ -769,7 +802,7 @@
       display: flex;
       align-items: flex-start;
       gap: 0.65rem;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.86rem;
     }
     .about-text:not(.dark) .feat-item { color: var(--text-mid); }
@@ -784,7 +817,7 @@
     .botanicals-section .section-head .eyebrow { color: var(--lime); }
     .botanicals-section .section-head .section-title { color: var(--cream); }
     .botanicals-section .section-head p {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 0.97rem;
       color: var(--text-on-dark-muted);
       max-width: 480px;
@@ -831,7 +864,7 @@
       margin-bottom: 0.25rem;
     }
     .bot-benefit {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 0.7rem;
       font-style: italic;
       color: var(--text-on-dark-muted);
@@ -878,7 +911,7 @@
     }
     .cta-inner .eyebrow { color: var(--lime); margin-bottom: 1rem; display: block; }
     .cta-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', 'Noto Serif Thai', serif;
       font-size: clamp(2.4rem, 5vw, 5rem);
       font-weight: 300;
       color: var(--cream);
@@ -887,7 +920,7 @@
     }
     .cta-title em { font-style: italic; color: var(--sage-pale); }
     .cta-sub {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 1rem;
       color: var(--text-on-dark-muted);
       line-height: 1.75;
@@ -926,7 +959,7 @@
     }
     .footer-logo-name span { color: var(--lime); }
     .footer-logo-sub {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.5rem;
       font-weight: 400;
       letter-spacing: 0.28em;
@@ -937,7 +970,7 @@
       margin-top: 0.15rem;
     }
     .footer-brand p {
-      font-family: 'Lora', serif;
+      font-family: 'Lora', 'Noto Serif Thai', serif;
       font-size: 0.86rem;
       line-height: 1.72;
       color: var(--text-on-dark-muted);
@@ -959,7 +992,7 @@
     .soc-btn i { color: var(--sage-light); width: 14px; height: 14px; }
 
     .foot-col h4 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.18em;
@@ -969,7 +1002,7 @@
     }
     .foot-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
     .foot-links a {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.83rem;
       font-weight: 400;
       color: var(--text-on-dark-muted);
@@ -982,7 +1015,7 @@
       display: flex;
       align-items: flex-start;
       gap: 0.55rem;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.83rem;
       color: var(--text-on-dark-muted);
       margin-bottom: 0.55rem;
@@ -999,7 +1032,7 @@
       gap: 0.75rem;
     }
     .foot-copy {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.75rem;
       color: rgba(138, 184, 152, 0.45);
     }
@@ -1008,7 +1041,7 @@
       display: flex;
       align-items: center;
       gap: 0.3rem;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', 'Noto Serif Thai', sans-serif;
       font-size: 0.7rem;
       font-weight: 500;
       color: var(--text-on-dark-muted);
@@ -1022,15 +1055,32 @@
   <nav>
     <a href="#" class="logo">
       <div class="logo-name">เฟอนิ<span>เซิร์ฟ</span></div>
-      <span class="logo-sub">Botanical Upholstery Care</span>
+      <span class="logo-sub"
+        data-lang-th="ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากพืช"
+        data-lang-en="Botanical Upholstery Care">ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากพืช</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#products">Products</a></li>
-      <li><a href="#botanicals">Ingredients</a></li>
-      <li><a href="#story">Our Story</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#products"
+        data-lang-th="สินค้า"
+        data-lang-en="Products">สินค้า</a></li>
+      <li><a href="#botanicals"
+        data-lang-th="ส่วนผสม"
+        data-lang-en="Ingredients">ส่วนผสม</a></li>
+      <li><a href="#story"
+        data-lang-th="เรื่องราวของเรา"
+        data-lang-en="Our Story">เรื่องราวของเรา</a></li>
+      <li><a href="#contact"
+        data-lang-th="ติดต่อเรา"
+        data-lang-en="Contact">ติดต่อเรา</a></li>
     </ul>
-    <a href="#products" class="nav-cta">Shop Now</a>
+    <a href="#products" class="nav-cta"
+      data-lang-th="ซื้อเลย"
+      data-lang-en="Shop Now">ซื้อเลย</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="th">TH</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
     <button class="nav-toggle" aria-label="Open menu">
       <i data-lucide="menu"></i>
     </button>
@@ -1041,37 +1091,49 @@
     <div class="hero-content">
       <div class="eyebrow hero-eyebrow">
         <span class="hero-eyebrow-dot"></span>
-        Pure. Natural. Effective.
+        <span data-lang-th="บริสุทธิ์. ธรรมชาติ. มีประสิทธิภาพ."
+              data-lang-en="Pure. Natural. Effective.">บริสุทธิ์. ธรรมชาติ. มีประสิทธิภาพ.</span>
       </div>
       <h1 class="hero-headline">
-        Clean Deeper,<br>
-        Live <em>Greener.</em>
+        <span data-lang-th="ทำความสะอาดลึกกว่า,"
+              data-lang-en="Clean Deeper,">ทำความสะอาดลึกกว่า,</span><br>
+        <span data-lang-th="ใช้ชีวิต "
+              data-lang-en="Live ">ใช้ชีวิต </span><em><span
+          data-lang-th="เป็นมิตรกว่า"
+          data-lang-en="Greener.">เป็นมิตรกว่า</span></em>
       </h1>
-      <p class="hero-sub">
-        Botanical-powered upholstery cleaners crafted from 15 plant-derived ingredients. Gentle on your fabrics, kind to the earth, safe for every family.
+      <p class="hero-sub"
+        data-lang-th="ผลิตภัณฑ์ทำความสะอาดเฟอร์นิเจอร์จากพืช ผสมจากส่วนผสมธรรมชาติ 15 ชนิด อ่อนโยนต่อผ้า เป็นมิตรกับโลก ปลอดภัยสำหรับทุกครอบครัว"
+        data-lang-en="Botanical-powered upholstery cleaners crafted from 15 plant-derived ingredients. Gentle on your fabrics, kind to the earth, safe for every family.">
+        ผลิตภัณฑ์ทำความสะอาดเฟอร์นิเจอร์จากพืช ผสมจากส่วนผสมธรรมชาติ 15 ชนิด อ่อนโยนต่อผ้า เป็นมิตรกับโลก ปลอดภัยสำหรับทุกครอบครัว
       </p>
       <div class="hero-actions">
         <a href="#products" class="btn-primary">
           <i data-lucide="leaf"></i>
-          Discover Products
+          <span data-lang-th="ค้นพบสินค้า"
+                data-lang-en="Discover Products">ค้นพบสินค้า</span>
         </a>
         <a href="#story" class="btn-outline">
-          Our Story
+          <span data-lang-th="เรื่องราวของเรา"
+                data-lang-en="Our Story">เรื่องราวของเรา</span>
           <i data-lucide="arrow-right"></i>
         </a>
       </div>
       <div class="hero-badges">
         <span class="hero-badge">
           <i data-lucide="check-circle"></i>
-          Zero harsh chemicals
+          <span data-lang-th="ไม่มีสารเคมีอันตราย"
+                data-lang-en="Zero harsh chemicals">ไม่มีสารเคมีอันตราย</span>
         </span>
         <span class="hero-badge">
           <i data-lucide="heart"></i>
-          Pet &amp; child safe
+          <span data-lang-th="ปลอดภัยสำหรับเด็กและสัตว์เลี้ยง"
+                data-lang-en="Pet &amp; child safe">ปลอดภัยสำหรับเด็กและสัตว์เลี้ยง</span>
         </span>
         <span class="hero-badge">
           <i data-lucide="leaf"></i>
-          Eco-certified
+          <span data-lang-th="ได้รับการรับรองด้านสิ่งแวดล้อม"
+                data-lang-en="Eco-certified">ได้รับการรับรองด้านสิ่งแวดล้อม</span>
         </span>
       </div>
     </div>
@@ -1086,12 +1148,15 @@
         <div class="float-card-icon"><i data-lucide="star"></i></div>
         <div>
           <div class="float-num">4.9 / 5.0</div>
-          <div class="float-label">50,000+ reviews</div>
+          <div class="float-label"
+            data-lang-th="50,000+ รีวิว"
+            data-lang-en="50,000+ reviews">50,000+ รีวิว</div>
         </div>
       </div>
       <div class="hero-circle-badge">
         <strong>15</strong>
-        <small>Botanicals</small>
+        <small data-lang-th="สมุนไพร"
+               data-lang-en="Botanicals">สมุนไพร</small>
       </div>
     </div>
   </section>
@@ -1123,10 +1188,21 @@
   <section class="products-section" id="products">
     <div class="products-header">
       <div>
-        <span class="eyebrow">Our Collection</span>
-        <h2 class="section-title">Nature's Power,<br>Bottled for You</h2>
+        <span class="eyebrow"
+          data-lang-th="คอลเลกชันของเรา"
+          data-lang-en="Our Collection">คอลเลกชันของเรา</span>
+        <h2 class="section-title">
+          <span data-lang-th="พลังแห่งธรรมชาติ,"
+                data-lang-en="Nature's Power,">พลังแห่งธรรมชาติ,</span><br>
+          <span data-lang-th="บรรจุขวดเพื่อคุณ"
+                data-lang-en="Bottled for You">บรรจุขวดเพื่อคุณ</span>
+        </h2>
       </div>
-      <a href="#" class="see-all-link">View all products <i data-lucide="arrow-right"></i></a>
+      <a href="#" class="see-all-link">
+        <span data-lang-th="ดูสินค้าทั้งหมด"
+              data-lang-en="View all products">ดูสินค้าทั้งหมด</span>
+        <i data-lucide="arrow-right"></i>
+      </a>
     </div>
     <div class="products-grid">
       <div class="product-card">
@@ -1134,12 +1210,22 @@
           src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=700"
           alt="FreshWeave Foam — fabric sofa cleaner">
         <div class="product-body">
-          <span class="product-tag">Fabric &amp; Microfiber</span>
+          <span class="product-tag"
+            data-lang-th="ผ้าและไมโครไฟเบอร์"
+            data-lang-en="Fabric &amp; Microfiber">ผ้าและไมโครไฟเบอร์</span>
           <h3 class="product-name">FreshWeave Foam</h3>
-          <p class="product-desc">A deep-lifting botanical foam that penetrates woven fibres, dissolving stains with plant-enzyme action and leaving a clean herbal scent.</p>
+          <p class="product-desc"
+            data-lang-th="โฟมสมุนไพรที่ซึมลึกเข้าเส้นใยผ้า ขจัดคราบด้วยเอนไซม์จากพืช พร้อมกลิ่นหอมสมุนไพรสดชื่น"
+            data-lang-en="A deep-lifting botanical foam that penetrates woven fibres, dissolving stains with plant-enzyme action and leaving a clean herbal scent.">
+            โฟมสมุนไพรที่ซึมลึกเข้าเส้นใยผ้า ขจัดคราบด้วยเอนไซม์จากพืช พร้อมกลิ่นหอมสมุนไพรสดชื่น
+          </p>
           <div class="product-footer">
             <span class="product-price">฿390 <small>/ 500 ml</small></span>
-            <a href="#" class="product-btn">Add to cart <i data-lucide="shopping-bag"></i></a>
+            <a href="#" class="product-btn">
+              <span data-lang-th="เพิ่มลงตะกร้า"
+                    data-lang-en="Add to cart">เพิ่มลงตะกร้า</span>
+              <i data-lucide="shopping-bag"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -1148,12 +1234,22 @@
           src="https://images.unsplash.com/photo-1780253481056-f5ae9f71a90e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=700"
           alt="VelvetMist Spray — delicate fabric cleaner">
         <div class="product-body">
-          <span class="product-tag">Delicate Fabrics</span>
+          <span class="product-tag"
+            data-lang-th="ผ้าบอบบาง"
+            data-lang-en="Delicate Fabrics">ผ้าบอบบาง</span>
           <h3 class="product-name">VelvetMist Spray</h3>
-          <p class="product-desc">Ultrafine mist with chamomile and green tea extracts for velvet, silk-blend, and woven upholstery where heavy foam would damage the pile.</p>
+          <p class="product-desc"
+            data-lang-th="สเปรย์ละอองละเอียดด้วยสารสกัด Chamomile และ Green Tea เหมาะสำหรับกำมะหยี่ ผ้าผสมไหม และผ้าเฟอร์นิเจอร์ที่บอบบาง"
+            data-lang-en="Ultrafine mist with chamomile and green tea extracts for velvet, silk-blend, and woven upholstery where heavy foam would damage the pile.">
+            สเปรย์ละอองละเอียดด้วยสารสกัด Chamomile และ Green Tea เหมาะสำหรับกำมะหยี่ ผ้าผสมไหม และผ้าเฟอร์นิเจอร์ที่บอบบาง
+          </p>
           <div class="product-footer">
             <span class="product-price">฿450 <small>/ 300 ml</small></span>
-            <a href="#" class="product-btn">Add to cart <i data-lucide="shopping-bag"></i></a>
+            <a href="#" class="product-btn">
+              <span data-lang-th="เพิ่มลงตะกร้า"
+                    data-lang-en="Add to cart">เพิ่มลงตะกร้า</span>
+              <i data-lucide="shopping-bag"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -1162,12 +1258,22 @@
           src="https://images.unsplash.com/photo-1512212621149-107ffe572d2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=700"
           alt="LeatherBloom Balm — leather conditioning cleaner">
         <div class="product-body">
-          <span class="product-tag">Leather &amp; Faux Leather</span>
+          <span class="product-tag"
+            data-lang-th="หนังแท้และหนังเทียม"
+            data-lang-en="Leather &amp; Faux Leather">หนังแท้และหนังเทียม</span>
           <h3 class="product-name">LeatherBloom Balm</h3>
-          <p class="product-desc">A nourishing botanical balm that cleans, conditions, and restores supple texture to leather and faux leather, deeply fed by neem and aloe.</p>
+          <p class="product-desc"
+            data-lang-th="บาล์มสมุนไพรบำรุงหนัง ทำความสะอาด ปรับสภาพ และฟื้นฟูความนุ่มนวลของหนังแท้และหนังเทียม ด้วย Neem และว่านหางจระเข้"
+            data-lang-en="A nourishing botanical balm that cleans, conditions, and restores supple texture to leather and faux leather, deeply fed by neem and aloe.">
+            บาล์มสมุนไพรบำรุงหนัง ทำความสะอาด ปรับสภาพ และฟื้นฟูความนุ่มนวลของหนังแท้และหนังเทียม ด้วย Neem และว่านหางจระเข้
+          </p>
           <div class="product-footer">
             <span class="product-price">฿520 <small>/ 200 ml</small></span>
-            <a href="#" class="product-btn">Add to cart <i data-lucide="shopping-bag"></i></a>
+            <a href="#" class="product-btn">
+              <span data-lang-th="เพิ่มลงตะกร้า"
+                    data-lang-en="Add to cart">เพิ่มลงตะกร้า</span>
+              <i data-lucide="shopping-bag"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -1177,8 +1283,15 @@
   <!-- HOW IT WORKS -->
   <section class="process-section">
     <div class="process-header">
-      <span class="eyebrow">How It Works</span>
-      <h2 class="section-title">Three Steps to <em>Spotless</em></h2>
+      <span class="eyebrow"
+        data-lang-th="วิธีการใช้งาน"
+        data-lang-en="How It Works">วิธีการใช้งาน</span>
+      <h2 class="section-title">
+        <span data-lang-th="สามขั้นตอนสู่ความ"
+              data-lang-en="Three Steps to ">สามขั้นตอนสู่ความ</span><em><span
+          data-lang-th="สะอาดสมบูรณ์"
+          data-lang-en="Spotless">สะอาดสมบูรณ์</span></em>
+      </h2>
     </div>
     <div class="steps-row">
       <div class="step">
@@ -1188,8 +1301,12 @@
             <span class="step-num">1</span>
           </div>
         </div>
-        <h3>Apply the Formula</h3>
-        <p>Spray or foam directly onto the soiled area. Plant enzymes activate on contact and begin breaking down stains at the molecular level.</p>
+        <h3 data-lang-th="ทาผลิตภัณฑ์"
+            data-lang-en="Apply the Formula">ทาผลิตภัณฑ์</h3>
+        <p data-lang-th="ฉีดหรือทาโฟมลงบนพื้นที่ที่เปื้อนโดยตรง เอนไซม์จากพืชทำงานทันทีที่สัมผัส เริ่มสลายคราบในระดับโมเลกุล"
+           data-lang-en="Spray or foam directly onto the soiled area. Plant enzymes activate on contact and begin breaking down stains at the molecular level.">
+          ฉีดหรือทาโฟมลงบนพื้นที่ที่เปื้อนโดยตรง เอนไซม์จากพืชทำงานทันทีที่สัมผัส เริ่มสลายคราบในระดับโมเลกุล
+        </p>
       </div>
       <div class="step">
         <div class="step-icon-wrap">
@@ -1198,8 +1315,12 @@
             <span class="step-num">2</span>
           </div>
         </div>
-        <h3>Gently Agitate</h3>
-        <p>Work the formula in with a soft brush or microfiber cloth. Watch stains lift without abrading or discolouring delicate fabric weaves.</p>
+        <h3 data-lang-th="ถูเบาๆ"
+            data-lang-en="Gently Agitate">ถูเบาๆ</h3>
+        <p data-lang-th="ใช้แปรงนุ่มหรือผ้าไมโครไฟเบอร์ถูผลิตภัณฑ์เบาๆ ดูคราบถูกยกขึ้นโดยไม่ทำให้ผ้าสึกหรอหรือสีซีด"
+           data-lang-en="Work the formula in with a soft brush or microfiber cloth. Watch stains lift without abrading or discolouring delicate fabric weaves.">
+          ใช้แปรงนุ่มหรือผ้าไมโครไฟเบอร์ถูผลิตภัณฑ์เบาๆ ดูคราบถูกยกขึ้นโดยไม่ทำให้ผ้าสึกหรอหรือสีซีด
+        </p>
       </div>
       <div class="step">
         <div class="step-icon-wrap">
@@ -1208,8 +1329,12 @@
             <span class="step-num">3</span>
           </div>
         </div>
-        <h3>Wipe &amp; Breathe</h3>
-        <p>Blot clean with a damp cloth. A lingering botanical freshness fills the room — no synthetic perfumes, only nature's own fragrance.</p>
+        <h3 data-lang-th="เช็ดสะอาดและสูดหายใจ"
+            data-lang-en="Wipe &amp; Breathe">เช็ดสะอาดและสูดหายใจ</h3>
+        <p data-lang-th="ซับด้วยผ้าชุบน้ำหมาด กลิ่นหอมสดชื่นจากสมุนไพรจะฟุ้งอยู่ในห้อง ไม่มีน้ำหอมสังเคราะห์ มีแต่กลิ่นหอมบริสุทธิ์จากธรรมชาติ"
+           data-lang-en="Blot clean with a damp cloth. A lingering botanical freshness fills the room — no synthetic perfumes, only nature's own fragrance.">
+          ซับด้วยผ้าชุบน้ำหมาด กลิ่นหอมสดชื่นจากสมุนไพรจะฟุ้งอยู่ในห้อง ไม่มีน้ำหอมสังเคราะห์ มีแต่กลิ่นหอมบริสุทธิ์จากธรรมชาติ
+        </p>
       </div>
     </div>
   </section>
@@ -1219,19 +1344,39 @@
     <div class="stats-row">
       <div class="stat">
         <div class="stat-num">50K+</div>
-        <div class="stat-lbl">Satisfied customers<br>across Thailand</div>
+        <div class="stat-lbl">
+          <span data-lang-th="ลูกค้าพึงพอใจ"
+                data-lang-en="Satisfied customers">ลูกค้าพึงพอใจ</span><br>
+          <span data-lang-th="ทั่วประเทศไทย"
+                data-lang-en="across Thailand">ทั่วประเทศไทย</span>
+        </div>
       </div>
       <div class="stat">
         <div class="stat-num">15</div>
-        <div class="stat-lbl">Active botanical<br>extracts per formula</div>
+        <div class="stat-lbl">
+          <span data-lang-th="สารสกัดพืชที่ออกฤทธิ์"
+                data-lang-en="Active botanical">สารสกัดพืชที่ออกฤทธิ์</span><br>
+          <span data-lang-th="ในแต่ละสูตร"
+                data-lang-en="extracts per formula">ในแต่ละสูตร</span>
+        </div>
       </div>
       <div class="stat">
         <div class="stat-num">0</div>
-        <div class="stat-lbl">Harsh chemicals<br>or synthetic dyes</div>
+        <div class="stat-lbl">
+          <span data-lang-th="สารเคมีอันตราย"
+                data-lang-en="Harsh chemicals">สารเคมีอันตราย</span><br>
+          <span data-lang-th="หรือสีสังเคราะห์"
+                data-lang-en="or synthetic dyes">หรือสีสังเคราะห์</span>
+        </div>
       </div>
       <div class="stat">
         <div class="stat-num">4.9</div>
-        <div class="stat-lbl">Average star rating<br>from verified buyers</div>
+        <div class="stat-lbl">
+          <span data-lang-th="คะแนนเฉลี่ยดาว"
+                data-lang-en="Average star rating">คะแนนเฉลี่ยดาว</span><br>
+          <span data-lang-th="จากผู้ซื้อที่ยืนยันแล้ว"
+                data-lang-en="from verified buyers">จากผู้ซื้อที่ยืนยันแล้ว</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1239,8 +1384,15 @@
   <!-- TESTIMONIALS -->
   <section class="testimonials-section">
     <div class="section-head">
-      <span class="eyebrow">What Customers Say</span>
-      <h2 class="section-title">Real Homes. <em>Real Results.</em></h2>
+      <span class="eyebrow"
+        data-lang-th="เสียงจากลูกค้า"
+        data-lang-en="What Customers Say">เสียงจากลูกค้า</span>
+      <h2 class="section-title">
+        <span data-lang-th="บ้านจริง. "
+              data-lang-en="Real Homes. ">บ้านจริง. </span><em><span
+          data-lang-th="ผลลัพธ์จริง."
+          data-lang-en="Real Results.">ผลลัพธ์จริง.</span></em>
+      </h2>
     </div>
     <div class="testi-grid">
       <div class="testi-card">
@@ -1249,14 +1401,20 @@
           <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           <i data-lucide="star"></i><i data-lucide="star"></i>
         </div>
-        <p class="testi-quote">"My sofa has three kids and two cats — it tells its own story. FreshWeave got out a month-old juice stain I had given up on. And it smells incredible."</p>
+        <p class="testi-quote"
+          data-lang-th="&quot;โซฟาของฉันผ่านการใช้งานจากเด็กสามคนและแมวสองตัว — มันบอกเล่าเรื่องราวในตัวเอง FreshWeave กำจัดคราบน้ำผลไม้อายุหนึ่งเดือนที่ฉันหมดหวังแล้ว กลิ่นหอมมากด้วย&quot;"
+          data-lang-en="&quot;My sofa has three kids and two cats — it tells its own story. FreshWeave got out a month-old juice stain I had given up on. And it smells incredible.&quot;">
+          "โซฟาของฉันผ่านการใช้งานจากเด็กสามคนและแมวสองตัว — มันบอกเล่าเรื่องราวในตัวเอง FreshWeave กำจัดคราบน้ำผลไม้อายุหนึ่งเดือนที่ฉันหมดหวังแล้ว กลิ่นหอมมากด้วย"
+        </p>
         <div class="testi-author">
           <img class="testi-avatar"
             src="https://images.unsplash.com/photo-1758273238795-c284e5ae09b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=120"
             alt="Nuttida K.">
           <div>
             <div class="testi-name">Nuttida K.</div>
-            <div class="testi-role">Homeowner, Bangkok</div>
+            <div class="testi-role"
+              data-lang-th="เจ้าของบ้าน, กรุงเทพฯ"
+              data-lang-en="Homeowner, Bangkok">เจ้าของบ้าน, กรุงเทพฯ</div>
           </div>
         </div>
       </div>
@@ -1266,14 +1424,20 @@
           <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           <i data-lucide="star"></i><i data-lucide="star"></i>
         </div>
-        <p class="testi-quote">"I was terrified to clean my velvet dining chairs. VelvetMist revived them completely — no watermarks, no damage. I now recommend it to all my interior design clients."</p>
+        <p class="testi-quote"
+          data-lang-th="&quot;ฉันกลัวมากที่จะทำความสะอาดเก้าอี้กำมะหยี่ VelvetMist ฟื้นคืนสภาพอย่างสมบูรณ์ ไม่มีรอยน้ำ ไม่เสียหาย ตอนนี้ฉันแนะนำให้ลูกค้าออกแบบภายในทุกคน&quot;"
+          data-lang-en="&quot;I was terrified to clean my velvet dining chairs. VelvetMist revived them completely — no watermarks, no damage. I now recommend it to all my interior design clients.&quot;">
+          "ฉันกลัวมากที่จะทำความสะอาดเก้าอี้กำมะหยี่ VelvetMist ฟื้นคืนสภาพอย่างสมบูรณ์ ไม่มีรอยน้ำ ไม่เสียหาย ตอนนี้ฉันแนะนำให้ลูกค้าออกแบบภายในทุกคน"
+        </p>
         <div class="testi-author">
           <img class="testi-avatar"
             src="https://images.unsplash.com/photo-1758272421667-15c8555bf7cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=120"
             alt="Patcharee S.">
           <div>
             <div class="testi-name">Patcharee S.</div>
-            <div class="testi-role">Interior Designer, Chiang Mai</div>
+            <div class="testi-role"
+              data-lang-th="นักออกแบบภายใน, เชียงใหม่"
+              data-lang-en="Interior Designer, Chiang Mai">นักออกแบบภายใน, เชียงใหม่</div>
           </div>
         </div>
       </div>
@@ -1283,14 +1447,20 @@
           <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           <i data-lucide="star"></i><i data-lucide="star"></i>
         </div>
-        <p class="testi-quote">"Six-year-old leather sofa now looks like new. The balm didn't just clean — it conditioned and restored the colour. A natural product that genuinely outperforms the synthetics."</p>
+        <p class="testi-quote"
+          data-lang-th="&quot;โซฟาหนังอายุหกปีดูเหมือนใหม่ บาล์มไม่แค่ทำความสะอาด แต่ยังปรับสภาพและฟื้นสีได้ด้วย ผลิตภัณฑ์ธรรมชาติที่ดีกว่าสังเคราะห์จริงๆ&quot;"
+          data-lang-en="&quot;Six-year-old leather sofa now looks like new. The balm didn't just clean — it conditioned and restored the colour. A natural product that genuinely outperforms the synthetics.&quot;">
+          "โซฟาหนังอายุหกปีดูเหมือนใหม่ บาล์มไม่แค่ทำความสะอาด แต่ยังปรับสภาพและฟื้นสีได้ด้วย ผลิตภัณฑ์ธรรมชาติที่ดีกว่าสังเคราะห์จริงๆ"
+        </p>
         <div class="testi-author">
           <img class="testi-avatar"
             src="https://images.unsplash.com/photo-1758273238698-c98a45a8df9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=120"
             alt="Wanchai T.">
           <div>
             <div class="testi-name">Wanchai T.</div>
-            <div class="testi-role">Homeowner, Phuket</div>
+            <div class="testi-role"
+              data-lang-th="เจ้าของบ้าน, ภูเก็ต"
+              data-lang-en="Homeowner, Phuket">เจ้าของบ้าน, ภูเก็ต</div>
           </div>
         </div>
       </div>
@@ -1307,28 +1477,82 @@
           alt="Botanical herbs and leaves — the source ingredients">
       </div>
       <div class="about-text">
-        <span class="eyebrow">Our Origin</span>
-        <h2 class="section-title">Born in a<br>Garden Kitchen</h2>
-        <p class="about-body">เฟอนิเซิร์ฟ started in 2017 in a small Bangkok apartment, when our founder Araya Wongsiri refused to use chemical-heavy cleaners near her young daughter. She began experimenting with the plant extracts she had studied in traditional Thai herbal medicine.</p>
-        <p class="about-body">What began as a home experiment became a mission — to prove that botanical ingredients could outclean synthetic chemicals without the toxic trade-offs.</p>
+        <span class="eyebrow"
+          data-lang-th="จุดเริ่มต้นของเรา"
+          data-lang-en="Our Origin">จุดเริ่มต้นของเรา</span>
+        <h2 class="section-title">
+          <span data-lang-th="เกิดในครัว"
+                data-lang-en="Born in a">เกิดในครัว</span><br>
+          <span data-lang-th="สวนสมุนไพร"
+                data-lang-en="Garden Kitchen">สวนสมุนไพร</span>
+        </h2>
+        <p class="about-body"
+          data-lang-th="เฟอนิเซิร์ฟ ก่อตั้งในปี 2560 ในอพาร์ตเมนต์เล็กๆ ในกรุงเทพฯ เมื่อผู้ก่อตั้ง Araya Wongsiri ปฏิเสธที่จะใช้ผลิตภัณฑ์ทำความสะอาดที่มีสารเคมีหนักใกล้ลูกสาวน้อยของเธอ เธอเริ่มทดลองกับสารสกัดจากพืชที่ได้ศึกษามาจากการแพทย์แผนไทย"
+          data-lang-en="เฟอนิเซิร์ฟ started in 2017 in a small Bangkok apartment, when our founder Araya Wongsiri refused to use chemical-heavy cleaners near her young daughter. She began experimenting with the plant extracts she had studied in traditional Thai herbal medicine.">
+          เฟอนิเซิร์ฟ ก่อตั้งในปี 2560 ในอพาร์ตเมนต์เล็กๆ ในกรุงเทพฯ เมื่อผู้ก่อตั้ง Araya Wongsiri ปฏิเสธที่จะใช้ผลิตภัณฑ์ทำความสะอาดที่มีสารเคมีหนักใกล้ลูกสาวน้อยของเธอ เธอเริ่มทดลองกับสารสกัดจากพืชที่ได้ศึกษามาจากการแพทย์แผนไทย
+        </p>
+        <p class="about-body"
+          data-lang-th="สิ่งที่เริ่มต้นจากการทดลองในบ้านกลายเป็นพันธกิจ — เพื่อพิสูจน์ว่าส่วนผสมจากพืชสามารถทำความสะอาดได้ดีกว่าสารเคมีสังเคราะห์ โดยไม่มีผลเสียที่เป็นพิษ"
+          data-lang-en="What began as a home experiment became a mission — to prove that botanical ingredients could outclean synthetic chemicals without the toxic trade-offs.">
+          สิ่งที่เริ่มต้นจากการทดลองในบ้านกลายเป็นพันธกิจ — เพื่อพิสูจน์ว่าส่วนผสมจากพืชสามารถทำความสะอาดได้ดีกว่าสารเคมีสังเคราะห์ โดยไม่มีผลเสียที่เป็นพิษ
+        </p>
         <ul class="feat-list">
-          <li class="feat-item"><i data-lucide="check"></i> Formulated by an ethnobotanist and a cleaning chemist</li>
-          <li class="feat-item"><i data-lucide="check"></i> Every batch tested on 12 fabric types before release</li>
-          <li class="feat-item"><i data-lucide="check"></i> Thai-made with locally sourced botanicals</li>
+          <li class="feat-item">
+            <i data-lucide="check"></i>
+            <span data-lang-th="สูตรโดยนักชาติพันธุ์พฤกษศาสตร์และนักเคมีทำความสะอาด"
+                  data-lang-en="Formulated by an ethnobotanist and a cleaning chemist">สูตรโดยนักชาติพันธุ์พฤกษศาสตร์และนักเคมีทำความสะอาด</span>
+          </li>
+          <li class="feat-item">
+            <i data-lucide="check"></i>
+            <span data-lang-th="ทุกชุดผ่านการทดสอบบนผ้า 12 ประเภทก่อนวางจำหน่าย"
+                  data-lang-en="Every batch tested on 12 fabric types before release">ทุกชุดผ่านการทดสอบบนผ้า 12 ประเภทก่อนวางจำหน่าย</span>
+          </li>
+          <li class="feat-item">
+            <i data-lucide="check"></i>
+            <span data-lang-th="ผลิตในไทยด้วยพืชสมุนไพรจากแหล่งในท้องถิ่น"
+                  data-lang-en="Thai-made with locally sourced botanicals">ผลิตในไทยด้วยพืชสมุนไพรจากแหล่งในท้องถิ่น</span>
+          </li>
         </ul>
       </div>
     </div>
     <!-- Split 2: text left (dark), image right -->
     <div class="about-split">
       <div class="about-text dark">
-        <span class="eyebrow">Our Promise</span>
-        <h2 class="section-title">A Cleaner Home,<br><em>Without Compromise</em></h2>
-        <p class="about-body">We believe you should never have to choose between a spotless sofa and a safe home. Our formulas are third-party tested, free from 1,500 restricted substances, and certified biodegradable.</p>
-        <p class="about-body">When you buy เฟอนิเซิร์ฟ, you support regenerative agriculture, fair-wage Thai farmers, and a planet that stays green.</p>
+        <span class="eyebrow"
+          data-lang-th="สัญญาของเรา"
+          data-lang-en="Our Promise">สัญญาของเรา</span>
+        <h2 class="section-title">
+          <span data-lang-th="บ้านที่สะอาดกว่า,"
+                data-lang-en="A Cleaner Home,">บ้านที่สะอาดกว่า,</span><br>
+          <em><span data-lang-th="โดยไม่ประนีประนอม"
+                    data-lang-en="Without Compromise">โดยไม่ประนีประนอม</span></em>
+        </h2>
+        <p class="about-body"
+          data-lang-th="เราเชื่อว่าคุณไม่ควรต้องเลือกระหว่างโซฟาที่สะอาดและบ้านที่ปลอดภัย สูตรของเราผ่านการทดสอบจากบุคคลที่สาม ปราศจากสาร 1,500 ชนิดที่ถูกจำกัด และได้รับการรับรองว่าย่อยสลายได้ทางชีวภาพ"
+          data-lang-en="We believe you should never have to choose between a spotless sofa and a safe home. Our formulas are third-party tested, free from 1,500 restricted substances, and certified biodegradable.">
+          เราเชื่อว่าคุณไม่ควรต้องเลือกระหว่างโซฟาที่สะอาดและบ้านที่ปลอดภัย สูตรของเราผ่านการทดสอบจากบุคคลที่สาม ปราศจากสาร 1,500 ชนิดที่ถูกจำกัด และได้รับการรับรองว่าย่อยสลายได้ทางชีวภาพ
+        </p>
+        <p class="about-body"
+          data-lang-th="เมื่อคุณซื้อ เฟอนิเซิร์ฟ คุณสนับสนุนเกษตรกรรมฟื้นฟู เกษตรกรไทยที่ได้รับค่าแรงยุติธรรม และโลกที่ยังคงเขียวขจี"
+          data-lang-en="When you buy เฟอนิเซิร์ฟ, you support regenerative agriculture, fair-wage Thai farmers, and a planet that stays green.">
+          เมื่อคุณซื้อ เฟอนิเซิร์ฟ คุณสนับสนุนเกษตรกรรมฟื้นฟู เกษตรกรไทยที่ได้รับค่าแรงยุติธรรม และโลกที่ยังคงเขียวขจี
+        </p>
         <ul class="feat-list">
-          <li class="feat-item"><i data-lucide="check"></i> Certified biodegradable packaging</li>
-          <li class="feat-item"><i data-lucide="check"></i> Carbon-neutral shipping on all orders</li>
-          <li class="feat-item"><i data-lucide="check"></i> 1% of revenue goes to forest restoration</li>
+          <li class="feat-item">
+            <i data-lucide="check"></i>
+            <span data-lang-th="บรรจุภัณฑ์ได้รับการรับรองว่าย่อยสลายได้"
+                  data-lang-en="Certified biodegradable packaging">บรรจุภัณฑ์ได้รับการรับรองว่าย่อยสลายได้</span>
+          </li>
+          <li class="feat-item">
+            <i data-lucide="check"></i>
+            <span data-lang-th="การจัดส่งที่เป็นกลางทางคาร์บอนทุกคำสั่งซื้อ"
+                  data-lang-en="Carbon-neutral shipping on all orders">การจัดส่งที่เป็นกลางทางคาร์บอนทุกคำสั่งซื้อ</span>
+          </li>
+          <li class="feat-item">
+            <i data-lucide="check"></i>
+            <span data-lang-th="1% ของรายได้มอบให้กับการฟื้นฟูป่าไม้"
+                  data-lang-en="1% of revenue goes to forest restoration">1% ของรายได้มอบให้กับการฟื้นฟูป่าไม้</span>
+          </li>
         </ul>
       </div>
       <div class="about-img">
@@ -1342,60 +1566,90 @@
   <!-- BOTANICALS GRID -->
   <section class="botanicals-section" id="botanicals">
     <div class="section-head">
-      <span class="eyebrow">The Ingredients</span>
-      <h2 class="section-title">15 Active Botanicals<br>in Every Formula</h2>
-      <p>Each ingredient is chosen for its proven cleaning or fabric-care property, sourced from verified organic or wild-harvested origins.</p>
+      <span class="eyebrow"
+        data-lang-th="ส่วนผสม"
+        data-lang-en="The Ingredients">ส่วนผสม</span>
+      <h2 class="section-title">
+        <span data-lang-th="สมุนไพร 15 ชนิด"
+              data-lang-en="15 Active Botanicals">สมุนไพร 15 ชนิด</span><br>
+        <span data-lang-th="ในทุกสูตร"
+              data-lang-en="in Every Formula">ในทุกสูตร</span>
+      </h2>
+      <p data-lang-th="แต่ละส่วนผสมถูกเลือกเพราะคุณสมบัติการทำความสะอาดหรือดูแลผ้าที่พิสูจน์แล้ว โดยได้รับการจัดหาจากแหล่งออร์แกนิกที่ผ่านการรับรองหรือเก็บเกี่ยวจากธรรมชาติ"
+         data-lang-en="Each ingredient is chosen for its proven cleaning or fabric-care property, sourced from verified organic or wild-harvested origins.">
+        แต่ละส่วนผสมถูกเลือกเพราะคุณสมบัติการทำความสะอาดหรือดูแลผ้าที่พิสูจน์แล้ว โดยได้รับการจัดหาจากแหล่งออร์แกนิกที่ผ่านการรับรองหรือเก็บเกี่ยวจากธรรมชาติ
+      </p>
     </div>
     <div class="bot-grid">
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="leaf"></i></div>
         <div class="bot-name">Aloe Vera</div>
-        <div class="bot-benefit">Moisturises &amp; conditions fibres</div>
+        <div class="bot-benefit"
+          data-lang-th="เพิ่มความชุ่มชื้นและปรับสภาพเส้นใย"
+          data-lang-en="Moisturises &amp; conditions fibres">เพิ่มความชุ่มชื้นและปรับสภาพเส้นใย</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="droplets"></i></div>
         <div class="bot-name">Green Tea Enzyme</div>
-        <div class="bot-benefit">Breaks down organic stains</div>
+        <div class="bot-benefit"
+          data-lang-th="สลายคราบสารอินทรีย์"
+          data-lang-en="Breaks down organic stains">สลายคราบสารอินทรีย์</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="wind"></i></div>
         <div class="bot-name">Peppermint Oil</div>
-        <div class="bot-benefit">Natural deodoriser &amp; freshener</div>
+        <div class="bot-benefit"
+          data-lang-th="ดับกลิ่นและให้ความสดชื่นตามธรรมชาติ"
+          data-lang-en="Natural deodoriser &amp; freshener">ดับกลิ่นและให้ความสดชื่นตามธรรมชาติ</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="flower"></i></div>
         <div class="bot-name">Chamomile</div>
-        <div class="bot-benefit">Brightens &amp; gently restores</div>
+        <div class="bot-benefit"
+          data-lang-th="ทำให้สว่างขึ้นและฟื้นฟูอย่างอ่อนโยน"
+          data-lang-en="Brightens &amp; gently restores">ทำให้สว่างขึ้นและฟื้นฟูอย่างอ่อนโยน</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="shield"></i></div>
         <div class="bot-name">Neem Leaf</div>
-        <div class="bot-benefit">Natural antibacterial agent</div>
+        <div class="bot-benefit"
+          data-lang-th="สารต้านเชื้อแบคทีเรียตามธรรมชาติ"
+          data-lang-en="Natural antibacterial agent">สารต้านเชื้อแบคทีเรียตามธรรมชาติ</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="zap"></i></div>
         <div class="bot-name">Lemongrass</div>
-        <div class="bot-benefit">Cuts through grease &amp; oils</div>
+        <div class="bot-benefit"
+          data-lang-th="ตัดผ่านคราบไขมันและน้ำมัน"
+          data-lang-en="Cuts through grease &amp; oils">ตัดผ่านคราบไขมันและน้ำมัน</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="layers"></i></div>
         <div class="bot-name">Bamboo Charcoal</div>
-        <div class="bot-benefit">Absorbs deep-set odours</div>
+        <div class="bot-benefit"
+          data-lang-th="ดูดซับกลิ่นที่ฝังลึก"
+          data-lang-en="Absorbs deep-set odours">ดูดซับกลิ่นที่ฝังลึก</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="feather"></i></div>
         <div class="bot-name">Rosemary</div>
-        <div class="bot-benefit">Antimicrobial &amp; aromatic</div>
+        <div class="bot-benefit"
+          data-lang-th="ต้านเชื้อจุลินทรีย์และหอมสดชื่น"
+          data-lang-en="Antimicrobial &amp; aromatic">ต้านเชื้อจุลินทรีย์และหอมสดชื่น</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="sun"></i></div>
         <div class="bot-name">Turmeric Root</div>
-        <div class="bot-benefit">Anti-inflammatory soothing</div>
+        <div class="bot-benefit"
+          data-lang-th="ต้านการอักเสบและให้ความผ่อนคลาย"
+          data-lang-en="Anti-inflammatory soothing">ต้านการอักเสบและให้ความผ่อนคลาย</div>
       </div>
       <div class="bot-item">
         <div class="bot-icon"><i data-lucide="circle-dot"></i></div>
         <div class="bot-name">Coconut Surfactant</div>
-        <div class="bot-benefit">Plant-derived lifting action</div>
+        <div class="bot-benefit"
+          data-lang-th="สารทำความสะอาดที่ได้จากพืช"
+          data-lang-en="Plant-derived lifting action">สารทำความสะอาดที่ได้จากพืช</div>
       </div>
     </div>
   </section>
@@ -1404,20 +1658,31 @@
   <section class="cta-section">
     <div class="cta-watermark" aria-hidden="true">เฟอนิเซิร์ฟ</div>
     <div class="cta-inner">
-      <span class="eyebrow">Start Today</span>
+      <span class="eyebrow"
+        data-lang-th="เริ่มต้นวันนี้"
+        data-lang-en="Start Today">เริ่มต้นวันนี้</span>
       <h2 class="cta-title">
-        Your Furniture<br>Deserves <em>Better.</em>
+        <span data-lang-th="เฟอร์นิเจอร์ของคุณ"
+              data-lang-en="Your Furniture">เฟอร์นิเจอร์ของคุณ</span><br>
+        <span data-lang-th="สมควรได้รับ"
+              data-lang-en="Deserves ">สมควรได้รับ</span><em><span
+          data-lang-th="สิ่งที่ดีกว่า"
+          data-lang-en="Better.">สิ่งที่ดีกว่า</span></em>
       </h2>
-      <p class="cta-sub">
-        Join 50,000 Thai households who have switched to botanical upholstery care. Fresher homes, safer families, a greener planet — one clean sofa at a time.
+      <p class="cta-sub"
+        data-lang-th="ร่วมกับครัวเรือนไทยกว่า 50,000 แห่งที่หันมาใช้ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากพืช บ้านสดชื่นกว่า ครอบครัวปลอดภัยกว่า โลกเขียวกว่า — ทีละตัว"
+        data-lang-en="Join 50,000 Thai households who have switched to botanical upholstery care. Fresher homes, safer families, a greener planet — one clean sofa at a time.">
+        ร่วมกับครัวเรือนไทยกว่า 50,000 แห่งที่หันมาใช้ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากพืช บ้านสดชื่นกว่า ครอบครัวปลอดภัยกว่า โลกเขียวกว่า — ทีละตัว
       </p>
       <div class="cta-btns">
         <a href="#products" class="btn-primary">
           <i data-lucide="shopping-bag"></i>
-          Shop the Collection
+          <span data-lang-th="ซื้อสินค้าในคอลเลกชัน"
+                data-lang-en="Shop the Collection">ซื้อสินค้าในคอลเลกชัน</span>
         </a>
         <a href="#" class="btn-outline">
-          Get a sample kit
+          <span data-lang-th="รับชุดตัวอย่าง"
+                data-lang-en="Get a sample kit">รับชุดตัวอย่าง</span>
           <i data-lucide="package"></i>
         </a>
       </div>
@@ -1429,8 +1694,13 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo-name">เฟอนิ<span>เซิร์ฟ</span></div>
-        <span class="footer-logo-sub">Botanical Upholstery Care</span>
-        <p>Crafted from nature's finest plants to protect your home, your family, and the world we share.</p>
+        <span class="footer-logo-sub"
+          data-lang-th="ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากพืช"
+          data-lang-en="Botanical Upholstery Care">ผลิตภัณฑ์ดูแลเฟอร์นิเจอร์จากพืช</span>
+        <p data-lang-th="ผลิตจากพืชธรรมชาติชั้นเลิศเพื่อปกป้องบ้านของคุณ ครอบครัว และโลกที่เราอยู่ร่วมกัน"
+           data-lang-en="Crafted from nature's finest plants to protect your home, your family, and the world we share.">
+          ผลิตจากพืชธรรมชาติชั้นเลิศเพื่อปกป้องบ้านของคุณ ครอบครัว และโลกที่เราอยู่ร่วมกัน
+        </p>
         <div class="social-row">
           <a href="#" class="soc-btn" aria-label="Facebook"><i data-lucide="facebook"></i></a>
           <a href="#" class="soc-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
@@ -1439,27 +1709,39 @@
         </div>
       </div>
       <div class="foot-col">
-        <h4>Products</h4>
+        <h4 data-lang-th="สินค้า" data-lang-en="Products">สินค้า</h4>
         <ul class="foot-links">
           <li><a href="#">FreshWeave Foam</a></li>
           <li><a href="#">VelvetMist Spray</a></li>
           <li><a href="#">LeatherBloom Balm</a></li>
           <li><a href="#">DailySage Spray</a></li>
-          <li><a href="#">Starter Bundle</a></li>
+          <li><a href="#"
+            data-lang-th="ชุดเริ่มต้น"
+            data-lang-en="Starter Bundle">ชุดเริ่มต้น</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
+        <h4 data-lang-th="บริษัท" data-lang-en="Company">บริษัท</h4>
         <ul class="foot-links">
-          <li><a href="#">Our Story</a></li>
-          <li><a href="#">Ingredients</a></li>
-          <li><a href="#">Certifications</a></li>
-          <li><a href="#">Stockists</a></li>
-          <li><a href="#">Press &amp; Media</a></li>
+          <li><a href="#"
+            data-lang-th="เรื่องราวของเรา"
+            data-lang-en="Our Story">เรื่องราวของเรา</a></li>
+          <li><a href="#"
+            data-lang-th="ส่วนผสม"
+            data-lang-en="Ingredients">ส่วนผสม</a></li>
+          <li><a href="#"
+            data-lang-th="การรับรอง"
+            data-lang-en="Certifications">การรับรอง</a></li>
+          <li><a href="#"
+            data-lang-th="ร้านค้าตัวแทน"
+            data-lang-en="Stockists">ร้านค้าตัวแทน</a></li>
+          <li><a href="#"
+            data-lang-th="สื่อและข่าวสาร"
+            data-lang-en="Press &amp; Media">สื่อและข่าวสาร</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Contact</h4>
+        <h4 data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</h4>
         <div class="contact-row">
           <i data-lucide="map-pin"></i>
           <span>88/12 Sukhumvit Soi 33, Watthana, Bangkok 10110</span>
@@ -1474,22 +1756,75 @@
         </div>
         <div class="contact-row">
           <i data-lucide="clock"></i>
-          <span>Mon–Fri, 9:00–18:00</span>
+          <span data-lang-th="จันทร์–ศุกร์ 9:00–18:00 น."
+                data-lang-en="Mon–Fri, 9:00–18:00">จันทร์–ศุกร์ 9:00–18:00 น.</span>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="foot-copy">&copy; 2026 เฟอนิเซิร์ฟ Co., Ltd. All rights reserved.</span>
+      <span class="foot-copy"
+        data-lang-th="© 2026 เฟอนิเซิร์ฟ Co., Ltd. สงวนลิขสิทธิ์ทุกประการ"
+        data-lang-en="© 2026 เฟอนิเซิร์ฟ Co., Ltd. All rights reserved.">© 2026 เฟอนิเซิร์ฟ Co., Ltd. สงวนลิขสิทธิ์ทุกประการ</span>
       <div class="cert-row">
-        <span class="cert"><i data-lucide="award"></i> Thai FDA Approved</span>
-        <span class="cert"><i data-lucide="leaf"></i> Biodegradable</span>
-        <span class="cert"><i data-lucide="heart"></i> Cruelty Free</span>
+        <span class="cert">
+          <i data-lucide="award"></i>
+          <span data-lang-th="ได้รับอนุมัติจาก อย."
+                data-lang-en="Thai FDA Approved">ได้รับอนุมัติจาก อย.</span>
+        </span>
+        <span class="cert">
+          <i data-lucide="leaf"></i>
+          <span data-lang-th="ย่อยสลายได้"
+                data-lang-en="Biodegradable">ย่อยสลายได้</span>
+        </span>
+        <span class="cert">
+          <i data-lucide="heart"></i>
+          <span data-lang-th="ไม่ทดลองกับสัตว์"
+                data-lang-en="Cruelty Free">ไม่ทดลองกับสัตว์</span>
+        </span>
       </div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
+    (function () {
+      var TITLES = {
+        th: 'เฟอนิเซิร์ฟ — ผลิตภัณฑ์ทำความสะอาดเฟอร์นิเจอร์จากพืช',
+        en: 'เฟอนิเซิร์ฟ — Botanical Upholstery Cleaners'
+      };
+      var DESCS = {
+        th: 'ผลิตภัณฑ์ทำความสะอาดเฟอร์นิเจอร์จากพืชธรรมชาติ ผสมจากสมุนไพร 15 ชนิด อ่อนโยนต่อผ้า ปลอดภัยสำหรับครอบครัว และเป็นมิตรกับสิ่งแวดล้อม',
+        en: 'Botanical-powered upholstery cleaners crafted from 15 plant-derived ingredients. Gentle on fabrics, kind to the earth, safe for every family.'
+      };
+
+      function applyLang(lang) {
+        document.documentElement.lang = lang;
+        document.title = TITLES[lang];
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', DESCS[lang]);
+
+        document.querySelectorAll('[data-lang-' + lang + ']').forEach(function (el) {
+          el.textContent = el.getAttribute('data-lang-' + lang);
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        try { localStorage.setItem('furnisurf_lang', lang); } catch (e) {}
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyLang(btn.dataset.lang);
+        });
+      });
+
+      var saved;
+      try { saved = localStorage.getItem('furnisurf_lang'); } catch (e) {}
+      applyLang(saved === 'en' ? 'en' : 'th');
+
+      lucide.createIcons();
+    })();
   </script>
 </body>
 </html>
