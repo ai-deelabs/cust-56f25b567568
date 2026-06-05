@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เฟอนิเซิร์ฟ — Botanical Upholstery Cleaners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.460.0"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --darkest: #060f0a;
+      --dark: #0e2119;
+      --dark-mid: #1d3d2a;
+      --sage-dark: #2d5c40;
+      --sage: #4a7c59;
+      --sage-light: #78a888;
+      --sage-pale: #b5d4c0;
+      --lime: #7abf5a;
+      --lime-dark: #5a9e3e;
+      --cream: #f2ede3;
+      --cream-light: #fafaf5;
+      --text-dark: #1a2e22;
+      --text-mid: #3d6348;
+      --text-muted: #6a9070;
+      --text-on-dark: #e8f0eb;
+      --text-on-dark-muted: #8ab898;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 5%;
+      background: rgba(9, 27, 17, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(122, 191, 90, 0.12);
+    }
+
+    .logo { text-decoration: none; }
+    .logo-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+    }
+    .logo-name span { color: var(--lime); }
+    .logo-sub {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.52rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-top: 0.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-on-dark-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-cta {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--darkest);
+      background: var(--lime);
+      padding: 0.52rem 1.3rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: #90d46e; transform: translateY(-1px); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--cream);
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 55% 45%;
+      position: relative;
+      overflow: hidden;
+      padding-top: 4.5rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 55%, rgba(74, 124, 89, 0.18) 0%, transparent 55%),
+        radial-gradient(circle at 78% 20%, rgba(122, 191, 90, 0.07) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem 7%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--lime);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--lime);
+      flex-shrink: 0;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5.5vw, 5.8rem);
+      font-weight: 300;
+      line-height: 1.06;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--sage-pale);
+    }
+
+    .hero-sub {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-on-dark-muted);
+      max-width: 430px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.75rem;
+    }
+
+    .btn-primary {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--darkest);
+      background: var(--lime);
+      padding: 0.82rem 1.8rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background: #90d46e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(122, 191, 90, 0.35);
+    }
+    .btn-primary i, .btn-outline i { width: 16px; height: 16px; }
+
+    .btn-outline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--cream);
+      background: transparent;
+      padding: 0.82rem 1.8rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border: 1px solid rgba(242, 237, 227, 0.28);
+      letter-spacing: 0.02em;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover {
+      border-color: var(--cream);
+      background: rgba(242, 237, 227, 0.06);
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.77rem;
+      font-weight: 400;
+      color: var(--text-on-dark-muted);
+    }
+    .hero-badge i { color: var(--lime); width: 13px; height: 13px; }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 7% 4rem 2rem;
+    }
+
+    .hero-img-frame {
+      width: 100%;
+      max-width: 460px;
+      aspect-ratio: 3/4;
+      border-radius: 2rem 2rem 7rem 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-img-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .float-card {
+      position: absolute;
+      bottom: 5.5rem;
+      left: -0.5rem;
+      background: var(--cream);
+      border-radius: 1rem;
+      padding: 0.9rem 1.1rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .float-card-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--dark-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .float-card-icon i { color: var(--lime); width: 17px; height: 17px; }
+    .float-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+    .float-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .hero-circle-badge {
+      position: absolute;
+      top: 6rem;
+      right: 4%;
+      width: 78px; height: 78px;
+      border-radius: 50%;
+      background: var(--sage-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .hero-circle-badge strong {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--lime);
+      line-height: 1;
+    }
+    .hero-circle-badge small {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.48rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage-pale);
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-content { padding: 3rem 6% 2rem; order: 2; }
+      .hero-visual { order: 1; padding: 6rem 6% 1.5rem; max-height: 55vh; }
+      .hero-img-frame { max-width: 100%; aspect-ratio: 16/9; border-radius: 1rem 1rem 3rem 1rem; }
+      .float-card { bottom: 1rem; left: 0.5rem; }
+      .hero-circle-badge { top: 6.5rem; width: 66px; height: 66px; }
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-strip {
+      background: var(--sage-dark);
+      padding: 0.85rem 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      animation: marquee-move 32s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee-move {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .m-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0 1.8rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-pale);
+    }
+    .m-item i { color: var(--lime); width: 11px; height: 11px; }
+    .m-sep {
+      display: inline-block;
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: rgba(181, 212, 192, 0.35);
+      flex-shrink: 0;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-section {
+      background: var(--dark);
+      padding: 6rem 6%;
+    }
+    .products-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .products-header .eyebrow { color: var(--lime); margin-bottom: 0.7rem; display: block; }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.8vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+    }
+    .products-header .section-title { color: var(--cream); }
+    .see-all-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--sage-light);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.2s;
+      flex-shrink: 0;
+    }
+    .see-all-link:hover { color: var(--lime); }
+    .see-all-link i { width: 14px; height: 14px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    @media (max-width: 900px) { .products-grid { grid-template-columns: 1fr; } }
+
+    .product-card {
+      background: var(--dark-mid);
+      border-radius: 1.4rem;
+      overflow: hidden;
+      border: 1px solid rgba(74, 124, 89, 0.18);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    }
+    .product-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .product-body { padding: 1.4rem; }
+    .product-tag {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lime);
+      background: rgba(122, 191, 90, 0.1);
+      padding: 0.22rem 0.6rem;
+      border-radius: 2rem;
+      margin-bottom: 0.7rem;
+    }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 0.45rem;
+    }
+    .product-desc {
+      font-family: 'Lora', serif;
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 1.2rem;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+    .product-price small {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--text-on-dark-muted);
+    }
+    .product-btn {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--darkest);
+      background: var(--lime);
+      padding: 0.5rem 1.1rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: background 0.2s;
+    }
+    .product-btn:hover { background: #90d46e; }
+    .product-btn i { width: 13px; height: 13px; }
+
+    /* ── PROCESS ── */
+    .process-section {
+      background: var(--cream-light);
+      padding: 6rem 6%;
+    }
+    .process-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .process-header .eyebrow { color: var(--sage); margin-bottom: 0.7rem; display: block; }
+    .process-header .section-title { color: var(--text-dark); }
+    .process-header .section-title em { font-style: italic; color: var(--sage); }
+
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 2.4rem;
+      left: calc(16.67% + 1.5rem);
+      right: calc(16.67% + 1.5rem);
+      height: 1px;
+      background: linear-gradient(90deg, var(--sage-pale), var(--sage-light), var(--sage-pale));
+    }
+    @media (max-width: 700px) {
+      .steps-row { grid-template-columns: 1fr; gap: 2rem; }
+      .steps-row::before { display: none; }
+    }
+
+    .step { text-align: center; }
+    .step-icon-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .step-icon {
+      width: 4.8rem; height: 4.8rem;
+      border-radius: 50%;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .step-icon i { color: var(--lime); width: 22px; height: 22px; }
+    .step-num {
+      position: absolute;
+      top: -0.2rem; right: -0.2rem;
+      width: 1.4rem; height: 1.4rem;
+      border-radius: 50%;
+      background: var(--lime);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--darkest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    .step p {
+      font-family: 'Lora', serif;
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    /* ── STATS ── */
+    .stats-band {
+      background: var(--dark-mid);
+      padding: 4.5rem 6%;
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+    @media (max-width: 700px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+
+    .stat {
+      padding: 1rem;
+      border-right: 1px solid rgba(181, 212, 192, 0.12);
+    }
+    .stat:last-child { border-right: none; }
+    @media (max-width: 700px) { .stat:nth-child(2) { border-right: none; } }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.4rem;
+      font-weight: 300;
+      color: var(--lime);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-lbl {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-on-dark-muted);
+      line-height: 1.5;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
+      background: var(--cream);
+      padding: 6rem 6%;
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-head .eyebrow { color: var(--sage); margin-bottom: 0.7rem; display: block; }
+    .section-head .section-title { color: var(--text-dark); }
+    .section-head .section-title em { font-style: italic; color: var(--sage); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    .testi-card {
+      background: var(--cream-light);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(74, 124, 89, 0.1);
+      position: relative;
+    }
+    .testi-product {
+      position: absolute;
+      top: 1.4rem; right: 1.4rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      background: rgba(74, 124, 89, 0.08);
+      padding: 0.18rem 0.5rem;
+      border-radius: 1rem;
+    }
+    .stars {
+      display: flex;
+      gap: 0.18rem;
+      margin-bottom: 0.9rem;
+    }
+    .stars i { width: 13px; height: 13px; color: var(--lime); }
+
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: var(--text-dark);
+      margin-bottom: 1.4rem;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .testi-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .testi-role {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ── ABOUT ── */
+    .about-section { overflow: hidden; }
+
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 58vh;
+    }
+    @media (max-width: 768px) {
+      .about-split { grid-template-columns: 1fr; }
+    }
+
+    .about-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .about-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .about-img { height: 55vw; min-height: 220px; }
+    }
+
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 8%;
+      background: var(--cream-light);
+    }
+    .about-text.dark { background: var(--dark); }
+    .about-text .eyebrow { margin-bottom: 0.7rem; display: block; }
+    .about-text:not(.dark) .eyebrow { color: var(--sage); }
+    .about-text.dark .eyebrow { color: var(--lime); }
+    .about-text:not(.dark) .section-title { color: var(--text-dark); }
+    .about-text.dark .section-title { color: var(--cream); }
+    .about-text .section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      margin-bottom: 1.2rem;
+    }
+    .about-text .section-title em { font-style: italic; }
+    .about-text:not(.dark) .section-title em { color: var(--sage); }
+    .about-text.dark .section-title em { color: var(--sage-pale); }
+
+    .about-body {
+      font-family: 'Lora', serif;
+      font-size: 0.96rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .about-text:not(.dark) .about-body { color: var(--text-mid); }
+    .about-text.dark .about-body { color: var(--text-on-dark-muted); }
+
+    .feat-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .feat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.86rem;
+    }
+    .about-text:not(.dark) .feat-item { color: var(--text-mid); }
+    .about-text.dark .feat-item { color: var(--text-on-dark-muted); }
+    .feat-item i { color: var(--lime); width: 15px; height: 15px; margin-top: 0.1rem; flex-shrink: 0; }
+
+    /* ── BOTANICALS ── */
+    .botanicals-section {
+      background: var(--darkest);
+      padding: 6rem 6%;
+    }
+    .botanicals-section .section-head .eyebrow { color: var(--lime); }
+    .botanicals-section .section-head .section-title { color: var(--cream); }
+    .botanicals-section .section-head p {
+      font-family: 'Lora', serif;
+      font-size: 0.97rem;
+      color: var(--text-on-dark-muted);
+      max-width: 480px;
+      margin: 1rem auto 0;
+      line-height: 1.72;
+    }
+
+    .bot-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.9rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 900px) { .bot-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 560px) { .bot-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .bot-item {
+      background: var(--dark);
+      border: 1px solid rgba(74, 124, 89, 0.18);
+      border-radius: 1rem;
+      padding: 1.4rem 0.9rem;
+      text-align: center;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .bot-item:hover {
+      border-color: rgba(122, 191, 90, 0.45);
+      background: var(--dark-mid);
+    }
+    .bot-icon {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: rgba(122, 191, 90, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.7rem;
+    }
+    .bot-icon i { color: var(--lime); width: 20px; height: 20px; }
+    .bot-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+    .bot-benefit {
+      font-family: 'Lora', serif;
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--text-on-dark-muted);
+      line-height: 1.4;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-section {
+      background: var(--dark);
+      padding: 7rem 6%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 12% 50%, rgba(74, 124, 89, 0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 88% 50%, rgba(122, 191, 90, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .cta-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(5rem, 14vw, 16rem);
+      font-weight: 300;
+      color: rgba(74, 124, 89, 0.07);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .cta-inner .eyebrow { color: var(--lime); margin-bottom: 1rem; display: block; }
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .cta-title em { font-style: italic; color: var(--sage-pale); }
+    .cta-sub {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--text-on-dark-muted);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 0.85rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--darkest);
+      padding: 4rem 6% 2rem;
+      border-top: 1px solid rgba(74, 124, 89, 0.13);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    .footer-logo-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+    .footer-logo-name span { color: var(--lime); }
+    .footer-logo-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 1rem;
+      display: block;
+      margin-top: 0.15rem;
+    }
+    .footer-brand p {
+      font-family: 'Lora', serif;
+      font-size: 0.86rem;
+      line-height: 1.72;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 1.2rem;
+    }
+    .social-row { display: flex; gap: 0.65rem; }
+    .soc-btn {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--dark-mid);
+      border: 1px solid rgba(74, 124, 89, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .soc-btn:hover { background: var(--sage-dark); border-color: var(--sage); }
+    .soc-btn i { color: var(--sage-light); width: 14px; height: 14px; }
+
+    .foot-col h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .foot-links a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.83rem;
+      font-weight: 400;
+      color: var(--text-on-dark-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .foot-links a:hover { color: var(--lime); }
+
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.83rem;
+      color: var(--text-on-dark-muted);
+      margin-bottom: 0.55rem;
+    }
+    .contact-row i { color: var(--sage-light); width: 13px; height: 13px; margin-top: 0.15rem; flex-shrink: 0; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(74, 124, 89, 0.1);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .foot-copy {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(138, 184, 152, 0.45);
+    }
+    .cert-row { display: flex; align-items: center; gap: 1.1rem; }
+    .cert {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-on-dark-muted);
+    }
+    .cert i { color: var(--lime); width: 11px; height: 11px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-name">เฟอนิ<span>เซิร์ฟ</span></div>
+      <span class="logo-sub">Botanical Upholstery Care</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#botanicals">Ingredients</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#products" class="nav-cta">Shop Now</a>
+    <button class="nav-toggle" aria-label="Open menu">
+      <i data-lucide="menu"></i>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Pure. Natural. Effective.
+      </div>
+      <h1 class="hero-headline">
+        Clean Deeper,<br>
+        Live <em>Greener.</em>
+      </h1>
+      <p class="hero-sub">
+        Botanical-powered upholstery cleaners crafted from 15 plant-derived ingredients. Gentle on your fabrics, kind to the earth, safe for every family.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">
+          <i data-lucide="leaf"></i>
+          Discover Products
+        </a>
+        <a href="#story" class="btn-outline">
+          Our Story
+          <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge">
+          <i data-lucide="check-circle"></i>
+          Zero harsh chemicals
+        </span>
+        <span class="hero-badge">
+          <i data-lucide="heart"></i>
+          Pet &amp; child safe
+        </span>
+        <span class="hero-badge">
+          <i data-lucide="leaf"></i>
+          Eco-certified
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-frame">
+        <img
+          src="https://images.unsplash.com/photo-1686178827149-6d55c72d81df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=900"
+          alt="Upholstery cleaning with plant-based product" loading="eager">
+      </div>
+      <div class="float-card">
+        <div class="float-card-icon"><i data-lucide="star"></i></div>
+        <div>
+          <div class="float-num">4.9 / 5.0</div>
+          <div class="float-label">50,000+ reviews</div>
+        </div>
+      </div>
+      <div class="hero-circle-badge">
+        <strong>15</strong>
+        <small>Botanicals</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="m-item"><i data-lucide="leaf"></i>Aloe Vera Extract</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Green Tea Enzyme</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Peppermint Oil</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Chamomile Infusion</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Neem Leaf Concentrate</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Lemongrass Essence</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Bamboo Charcoal</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Rosemary Extract</span><span class="m-sep"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="m-item"><i data-lucide="leaf"></i>Aloe Vera Extract</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Green Tea Enzyme</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Peppermint Oil</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Chamomile Infusion</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Neem Leaf Concentrate</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Lemongrass Essence</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Bamboo Charcoal</span><span class="m-sep"></span>
+      <span class="m-item"><i data-lucide="leaf"></i>Rosemary Extract</span><span class="m-sep"></span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="products-header">
+      <div>
+        <span class="eyebrow">Our Collection</span>
+        <h2 class="section-title">Nature's Power,<br>Bottled for You</h2>
+      </div>
+      <a href="#" class="see-all-link">View all products <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <img class="product-img"
+          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=700"
+          alt="FreshWeave Foam — fabric sofa cleaner">
+        <div class="product-body">
+          <span class="product-tag">Fabric &amp; Microfiber</span>
+          <h3 class="product-name">FreshWeave Foam</h3>
+          <p class="product-desc">A deep-lifting botanical foam that penetrates woven fibres, dissolving stains with plant-enzyme action and leaving a clean herbal scent.</p>
+          <div class="product-footer">
+            <span class="product-price">฿390 <small>/ 500 ml</small></span>
+            <a href="#" class="product-btn">Add to cart <i data-lucide="shopping-bag"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img"
+          src="https://images.unsplash.com/photo-1780253481056-f5ae9f71a90e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=700"
+          alt="VelvetMist Spray — delicate fabric cleaner">
+        <div class="product-body">
+          <span class="product-tag">Delicate Fabrics</span>
+          <h3 class="product-name">VelvetMist Spray</h3>
+          <p class="product-desc">Ultrafine mist with chamomile and green tea extracts for velvet, silk-blend, and woven upholstery where heavy foam would damage the pile.</p>
+          <div class="product-footer">
+            <span class="product-price">฿450 <small>/ 300 ml</small></span>
+            <a href="#" class="product-btn">Add to cart <i data-lucide="shopping-bag"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img"
+          src="https://images.unsplash.com/photo-1512212621149-107ffe572d2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=700"
+          alt="LeatherBloom Balm — leather conditioning cleaner">
+        <div class="product-body">
+          <span class="product-tag">Leather &amp; Faux Leather</span>
+          <h3 class="product-name">LeatherBloom Balm</h3>
+          <p class="product-desc">A nourishing botanical balm that cleans, conditions, and restores supple texture to leather and faux leather, deeply fed by neem and aloe.</p>
+          <div class="product-footer">
+            <span class="product-price">฿520 <small>/ 200 ml</small></span>
+            <a href="#" class="product-btn">Add to cart <i data-lucide="shopping-bag"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section">
+    <div class="process-header">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="section-title">Three Steps to <em>Spotless</em></h2>
+    </div>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">
+            <i data-lucide="droplets"></i>
+            <span class="step-num">1</span>
+          </div>
+        </div>
+        <h3>Apply the Formula</h3>
+        <p>Spray or foam directly onto the soiled area. Plant enzymes activate on contact and begin breaking down stains at the molecular level.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">
+            <i data-lucide="hand"></i>
+            <span class="step-num">2</span>
+          </div>
+        </div>
+        <h3>Gently Agitate</h3>
+        <p>Work the formula in with a soft brush or microfiber cloth. Watch stains lift without abrading or discolouring delicate fabric weaves.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">
+            <i data-lucide="wind"></i>
+            <span class="step-num">3</span>
+          </div>
+        </div>
+        <h3>Wipe &amp; Breathe</h3>
+        <p>Blot clean with a damp cloth. A lingering botanical freshness fills the room — no synthetic perfumes, only nature's own fragrance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-band">
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">50K+</div>
+        <div class="stat-lbl">Satisfied customers<br>across Thailand</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">15</div>
+        <div class="stat-lbl">Active botanical<br>extracts per formula</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl">Harsh chemicals<br>or synthetic dyes</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4.9</div>
+        <div class="stat-lbl">Average star rating<br>from verified buyers</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-head">
+      <span class="eyebrow">What Customers Say</span>
+      <h2 class="section-title">Real Homes. <em>Real Results.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <span class="testi-product">FreshWeave Foam</span>
+        <div class="stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          <i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="testi-quote">"My sofa has three kids and two cats — it tells its own story. FreshWeave got out a month-old juice stain I had given up on. And it smells incredible."</p>
+        <div class="testi-author">
+          <img class="testi-avatar"
+            src="https://images.unsplash.com/photo-1758273238795-c284e5ae09b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=120"
+            alt="Nuttida K.">
+          <div>
+            <div class="testi-name">Nuttida K.</div>
+            <div class="testi-role">Homeowner, Bangkok</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-product">VelvetMist Spray</span>
+        <div class="stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          <i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="testi-quote">"I was terrified to clean my velvet dining chairs. VelvetMist revived them completely — no watermarks, no damage. I now recommend it to all my interior design clients."</p>
+        <div class="testi-author">
+          <img class="testi-avatar"
+            src="https://images.unsplash.com/photo-1758272421667-15c8555bf7cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=120"
+            alt="Patcharee S.">
+          <div>
+            <div class="testi-name">Patcharee S.</div>
+            <div class="testi-role">Interior Designer, Chiang Mai</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-product">LeatherBloom Balm</span>
+        <div class="stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          <i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p class="testi-quote">"Six-year-old leather sofa now looks like new. The balm didn't just clean — it conditioned and restored the colour. A natural product that genuinely outperforms the synthetics."</p>
+        <div class="testi-author">
+          <img class="testi-avatar"
+            src="https://images.unsplash.com/photo-1758273238698-c98a45a8df9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=120"
+            alt="Wanchai T.">
+          <div>
+            <div class="testi-name">Wanchai T.</div>
+            <div class="testi-role">Homeowner, Phuket</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / STORY -->
+  <section class="about-section" id="story">
+    <!-- Split 1: image left, text right -->
+    <div class="about-split">
+      <div class="about-img">
+        <img
+          src="https://images.unsplash.com/photo-1551772413-6c1b7dc18548?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=900"
+          alt="Botanical herbs and leaves — the source ingredients">
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">Our Origin</span>
+        <h2 class="section-title">Born in a<br>Garden Kitchen</h2>
+        <p class="about-body">เฟอนิเซิร์ฟ started in 2017 in a small Bangkok apartment, when our founder Araya Wongsiri refused to use chemical-heavy cleaners near her young daughter. She began experimenting with the plant extracts she had studied in traditional Thai herbal medicine.</p>
+        <p class="about-body">What began as a home experiment became a mission — to prove that botanical ingredients could outclean synthetic chemicals without the toxic trade-offs.</p>
+        <ul class="feat-list">
+          <li class="feat-item"><i data-lucide="check"></i> Formulated by an ethnobotanist and a cleaning chemist</li>
+          <li class="feat-item"><i data-lucide="check"></i> Every batch tested on 12 fabric types before release</li>
+          <li class="feat-item"><i data-lucide="check"></i> Thai-made with locally sourced botanicals</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Split 2: text left (dark), image right -->
+    <div class="about-split">
+      <div class="about-text dark">
+        <span class="eyebrow">Our Promise</span>
+        <h2 class="section-title">A Cleaner Home,<br><em>Without Compromise</em></h2>
+        <p class="about-body">We believe you should never have to choose between a spotless sofa and a safe home. Our formulas are third-party tested, free from 1,500 restricted substances, and certified biodegradable.</p>
+        <p class="about-body">When you buy เฟอนิเซิร์ฟ, you support regenerative agriculture, fair-wage Thai farmers, and a planet that stays green.</p>
+        <ul class="feat-list">
+          <li class="feat-item"><i data-lucide="check"></i> Certified biodegradable packaging</li>
+          <li class="feat-item"><i data-lucide="check"></i> Carbon-neutral shipping on all orders</li>
+          <li class="feat-item"><i data-lucide="check"></i> 1% of revenue goes to forest restoration</li>
+        </ul>
+      </div>
+      <div class="about-img">
+        <img
+          src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=900"
+          alt="Clean bright living room — the result of botanical upholstery care">
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTANICALS GRID -->
+  <section class="botanicals-section" id="botanicals">
+    <div class="section-head">
+      <span class="eyebrow">The Ingredients</span>
+      <h2 class="section-title">15 Active Botanicals<br>in Every Formula</h2>
+      <p>Each ingredient is chosen for its proven cleaning or fabric-care property, sourced from verified organic or wild-harvested origins.</p>
+    </div>
+    <div class="bot-grid">
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="leaf"></i></div>
+        <div class="bot-name">Aloe Vera</div>
+        <div class="bot-benefit">Moisturises &amp; conditions fibres</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="droplets"></i></div>
+        <div class="bot-name">Green Tea Enzyme</div>
+        <div class="bot-benefit">Breaks down organic stains</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="wind"></i></div>
+        <div class="bot-name">Peppermint Oil</div>
+        <div class="bot-benefit">Natural deodoriser &amp; freshener</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="flower"></i></div>
+        <div class="bot-name">Chamomile</div>
+        <div class="bot-benefit">Brightens &amp; gently restores</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="shield"></i></div>
+        <div class="bot-name">Neem Leaf</div>
+        <div class="bot-benefit">Natural antibacterial agent</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="zap"></i></div>
+        <div class="bot-name">Lemongrass</div>
+        <div class="bot-benefit">Cuts through grease &amp; oils</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="layers"></i></div>
+        <div class="bot-name">Bamboo Charcoal</div>
+        <div class="bot-benefit">Absorbs deep-set odours</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="feather"></i></div>
+        <div class="bot-name">Rosemary</div>
+        <div class="bot-benefit">Antimicrobial &amp; aromatic</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="sun"></i></div>
+        <div class="bot-name">Turmeric Root</div>
+        <div class="bot-benefit">Anti-inflammatory soothing</div>
+      </div>
+      <div class="bot-item">
+        <div class="bot-icon"><i data-lucide="circle-dot"></i></div>
+        <div class="bot-name">Coconut Surfactant</div>
+        <div class="bot-benefit">Plant-derived lifting action</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <div class="cta-watermark" aria-hidden="true">เฟอนิเซิร์ฟ</div>
+    <div class="cta-inner">
+      <span class="eyebrow">Start Today</span>
+      <h2 class="cta-title">
+        Your Furniture<br>Deserves <em>Better.</em>
+      </h2>
+      <p class="cta-sub">
+        Join 50,000 Thai households who have switched to botanical upholstery care. Fresher homes, safer families, a greener planet — one clean sofa at a time.
+      </p>
+      <div class="cta-btns">
+        <a href="#products" class="btn-primary">
+          <i data-lucide="shopping-bag"></i>
+          Shop the Collection
+        </a>
+        <a href="#" class="btn-outline">
+          Get a sample kit
+          <i data-lucide="package"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-name">เฟอนิ<span>เซิร์ฟ</span></div>
+        <span class="footer-logo-sub">Botanical Upholstery Care</span>
+        <p>Crafted from nature's finest plants to protect your home, your family, and the world we share.</p>
+        <div class="social-row">
+          <a href="#" class="soc-btn" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" class="soc-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" class="soc-btn" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+          <a href="#" class="soc-btn" aria-label="Line"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Products</h4>
+        <ul class="foot-links">
+          <li><a href="#">FreshWeave Foam</a></li>
+          <li><a href="#">VelvetMist Spray</a></li>
+          <li><a href="#">LeatherBloom Balm</a></li>
+          <li><a href="#">DailySage Spray</a></li>
+          <li><a href="#">Starter Bundle</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul class="foot-links">
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Ingredients</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Stockists</a></li>
+          <li><a href="#">Press &amp; Media</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <div class="contact-row">
+          <i data-lucide="map-pin"></i>
+          <span>88/12 Sukhumvit Soi 33, Watthana, Bangkok 10110</span>
+        </div>
+        <div class="contact-row">
+          <i data-lucide="phone"></i>
+          <span>02-123-4567</span>
+        </div>
+        <div class="contact-row">
+          <i data-lucide="mail"></i>
+          <span>hello@furnisurf.co.th</span>
+        </div>
+        <div class="contact-row">
+          <i data-lucide="clock"></i>
+          <span>Mon–Fri, 9:00–18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="foot-copy">&copy; 2026 เฟอนิเซิร์ฟ Co., Ltd. All rights reserved.</span>
+      <div class="cert-row">
+        <span class="cert"><i data-lucide="award"></i> Thai FDA Approved</span>
+        <span class="cert"><i data-lucide="leaf"></i> Biodegradable</span>
+        <span class="cert"><i data-lucide="heart"></i> Cruelty Free</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

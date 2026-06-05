@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เฟอนิเซิร์ฟ — Herbal Upholstery Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@0.460.0"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --forest:  #19382a;
+      --deep:    #0f2419;
+      --mid:     #2d6e4a;
+      --bright:  #40976a;
+      --sage:    #8ab89a;
+      --mist:    #d8eee2;
+      --paper:   #f2f7f4;
+      --ink:     #1a2d22;
+      --muted:   #5a7466;
+      --white:   #ffffff;
+      --accent:  #a3c96b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.4rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--mist);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--forest) !important;
+      font-weight: 600 !important;
+      padding: 0.45rem 1.2rem;
+      border-radius: 100px;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.85; }
+
+    .nav-burger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--white);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(64,151,106,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5% 6rem 8%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-eyebrow i { width: 14px; height: 14px; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--mist);
+      max-width: 440px;
+      margin-bottom: 2.6rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--forest);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(163,201,107,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: rgba(163,201,107,0.08);
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 1.8rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .hero-badge {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-badge strong {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-badge span {
+      font-size: 0.78rem;
+      color: var(--sage);
+      font-weight: 400;
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--forest) 0%, transparent 30%);
+      z-index: 1;
+    }
+
+    .hero-leaf-badge {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 2rem;
+      z-index: 3;
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    .hero-leaf-badge .badge-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--mist);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mid);
+    }
+
+    .hero-leaf-badge p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .hero-leaf-badge p strong {
+      display: block;
+      color: var(--forest);
+      font-size: 0.88rem;
+    }
+
+    /* ─── INGREDIENTS STRIP ─── */
+    .ingredients-strip {
+      background: var(--mist);
+      padding: 1rem 5%;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--sage);
+    }
+
+    .ingredient-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--mid);
+    }
+
+    .ingredient-tag i { width: 14px; height: 14px; opacity: 0.7; }
+
+    /* ─── PRODUCTS ─── */
+    .products {
+      padding: 6rem 5%;
+      background: var(--white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: var(--mist);
+      padding: 0.3rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-header p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--paper);
+      border-radius: 1.4rem;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid var(--mist);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(25,56,42,0.12);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .product-body {
+      padding: 1.6rem;
+    }
+
+    .product-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bright);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .product-body p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    .product-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .product-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      color: var(--ink);
+    }
+
+    .product-features li i {
+      width: 14px;
+      height: 14px;
+      color: var(--bright);
+      flex-shrink: 0;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--forest);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .btn-sm {
+      background: var(--forest);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.55rem 1.2rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-sm:hover { background: var(--mid); }
+
+    /* ─── FEATURES ─── */
+    .features {
+      padding: 6rem 5%;
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features::before {
+      content: '';
+      position: absolute;
+      right: -10%;
+      top: -30%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 80px solid rgba(255,255,255,0.03);
+      pointer-events: none;
+    }
+
+    .features .section-header h2 { color: var(--white); }
+    .features .section-header p { color: var(--sage); }
+    .features .section-tag {
+      background: rgba(255,255,255,0.1);
+      color: var(--accent);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1.2rem;
+      padding: 2rem 1.6rem;
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .feature-card:hover {
+      background: rgba(163,201,107,0.08);
+      border-color: rgba(163,201,107,0.3);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(163,201,107,0.15);
+      border-radius: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-icon i { width: 24px; height: 24px; }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--sage);
+      line-height: 1.65;
+    }
+
+    /* ─── SOCIAL PROOF ─── */
+    .proof {
+      padding: 6rem 5%;
+      background: var(--paper);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .stat {
+      padding: 1.8rem 1rem;
+      background: var(--white);
+      border-radius: 1.2rem;
+      border: 1px solid var(--mist);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testi-card {
+      background: var(--white);
+      border-radius: 1.4rem;
+      padding: 2rem;
+      border: 1px solid var(--mist);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    .testi-stars i {
+      width: 15px;
+      height: 15px;
+      color: #f0b429;
+      fill: #f0b429;
+    }
+
+    .testi-card blockquote {
+      font-size: 0.93rem;
+      color: var(--ink);
+      line-height: 1.7;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--mist);
+    }
+
+    .testi-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--mist);
+    }
+
+    .testi-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--forest);
+    }
+
+    .testi-role {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .testi-tag {
+      margin-left: auto;
+      background: var(--mist);
+      color: var(--mid);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      padding: 7rem 5%;
+      background: var(--white);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 1.6rem;
+    }
+
+    .about-img-accent {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1.2rem;
+      border: 5px solid var(--white);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+    }
+
+    .about-pill {
+      position: absolute;
+      top: 2rem;
+      left: -1.5rem;
+      background: var(--forest);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.7rem 1.2rem;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 24px rgba(25,56,42,0.35);
+    }
+
+    .about-pill i { width: 14px; height: 14px; color: var(--accent); }
+
+    .about-content { padding-right: 1rem; }
+
+    .about-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.2;
+      margin-bottom: 1.4rem;
+    }
+
+    .about-content h2 em {
+      font-style: italic;
+      color: var(--mid);
+    }
+
+    .about-content p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-value {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .about-value-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--mist);
+      border-radius: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mid);
+      flex-shrink: 0;
+    }
+
+    .about-value-icon i { width: 16px; height: 16px; }
+
+    .about-value h4 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 0.2rem;
+    }
+
+    .about-value p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: var(--deep);
+      padding: 6rem 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(64,151,106,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-band .section-tag {
+      background: rgba(163,201,107,0.15);
+      color: var(--accent);
+    }
+
+    .cta-band h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin: 1rem 0 1.2rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-band p {
+      color: var(--sage);
+      font-size: 1rem;
+      max-width: 460px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--forest);
+      padding: 4rem 5% 2rem;
+      color: var(--sage);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .nav-logo {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      max-width: 260px;
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: var(--accent);
+      color: var(--forest);
+    }
+
+    .footer-social i { width: 16px; height: 16px; }
+
+    .footer-col h4 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .footer-col a {
+      color: var(--sage);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-contact-item i {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+      font-size: 0.8rem;
+      color: var(--sage);
+      text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover { color: var(--accent); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
+      .nav-burger { display: block; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-left {
+        padding: 4rem 6% 3rem;
+      }
+
+      .hero-right {
+        height: 340px;
+      }
+
+      .hero-right::before {
+        background: linear-gradient(to bottom, var(--forest) 0%, transparent 30%);
+      }
+
+      .hero-badges { gap: 1.2rem; }
+
+      .products-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-img-accent { display: none; }
+      .about-pill { display: none; }
+      .about-content { padding-right: 0; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="#" class="nav-logo">เฟอนิเซิร์ฟ<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#features">Why Us</a></li>
+    <li><a href="#proof">Reviews</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#cta" class="nav-cta">Shop Now</a></li>
+  </ul>
+  <button class="nav-burger" aria-label="Menu">
+    <i data-lucide="menu"></i>
+  </button>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <i data-lucide="leaf"></i>
+      100% Plant-Derived Formula
+    </div>
+    <h1>
+      Nature's Power,<br />
+      <em>Perfectly Clean</em><br />
+      Upholstery.
+    </h1>
+    <p class="hero-desc">
+      เฟอนิเซิร์ฟ harnesses the deep-cleaning force of botanical extracts to lift stains,
+      neutralise odours, and restore the life of every fabric — without harsh chemicals.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">
+        <i data-lucide="shopping-bag"></i>
+        Shop Products
+      </a>
+      <a href="#about" class="btn-outline">
+        <i data-lucide="play-circle"></i>
+        Our Story
+      </a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">
+        <strong>98%</strong>
+        <span>Stain removal rate</span>
+      </div>
+      <div class="hero-badge">
+        <strong>50k+</strong>
+        <span>Happy households</span>
+      </div>
+      <div class="hero-badge">
+        <strong>0</strong>
+        <span>Harsh chemicals</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img
+      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&h=900&fit=crop"
+      alt="Clean green fabric sofa"
+    />
+    <div class="hero-leaf-badge">
+      <div class="badge-icon">
+        <i data-lucide="shield-check"></i>
+      </div>
+      <p>
+        <strong>Dermatologist Tested</strong>
+        Safe for pets &amp; children
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INGREDIENTS STRIP ─── -->
+<div class="ingredients-strip">
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> Lemongrass Extract</div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> Neem Leaf Enzyme</div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> Peppermint Oil</div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> Aloe Vera Complex</div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> Green Tea Antioxidants</div>
+  <div class="ingredient-tag"><i data-lucide="leaf"></i> Citrus Bioflavonoids</div>
+</div>
+
+<!-- ─── PRODUCTS ─── -->
+<section class="products" id="products">
+  <div class="section-header">
+    <span class="section-tag">Our Collection</span>
+    <h2>Botanically Formulated<br />Fabric Care</h2>
+    <p>Three targeted solutions for every upholstery challenge — from daily freshening to deep stain rescue.</p>
+  </div>
+  <div class="products-grid">
+
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img
+        class="product-img"
+        src="https://images.unsplash.com/photo-1643836361449-90d35fd14f1b?w=600&h=480&fit=crop"
+        alt="Herbal Upholstery Foam"
+      />
+      <div class="product-body">
+        <div class="product-tag">Bestseller</div>
+        <h3>Deep-Clean Botanical Foam</h3>
+        <p>Dense microfoam penetrates deep into woven fibres, dissolving grease, grime, and ground-in dirt on contact.</p>
+        <ul class="product-features">
+          <li><i data-lucide="check-circle-2"></i> Works on fabric, velvet &amp; microfibre</li>
+          <li><i data-lucide="check-circle-2"></i> No residue — rinse-free formula</li>
+          <li><i data-lucide="check-circle-2"></i> Scented with lemongrass &amp; mint</li>
+        </ul>
+        <div class="product-price-row">
+          <span class="product-price">฿ 390</span>
+          <a href="#cta" class="btn-sm">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img
+        class="product-img"
+        src="https://images.unsplash.com/photo-1700151573534-dcd72ed6daf3?w=600&h=480&fit=crop"
+        alt="Fabric Refresh Spray"
+      />
+      <div class="product-body">
+        <div class="product-tag">Daily Use</div>
+        <h3>Herbal Fabric Refresh Spray</h3>
+        <p>A light botanical mist that neutralises odours and leaves fabrics smelling freshly laundered throughout the day.</p>
+        <ul class="product-features">
+          <li><i data-lucide="check-circle-2"></i> Instant odour neutralisation</li>
+          <li><i data-lucide="check-circle-2"></i> Green-tea antimicrobial barrier</li>
+          <li><i data-lucide="check-circle-2"></i> Suitable for curtains &amp; cushions</li>
+        </ul>
+        <div class="product-price-row">
+          <span class="product-price">฿ 290</span>
+          <a href="#cta" class="btn-sm">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img
+        class="product-img"
+        src="https://images.unsplash.com/photo-1551772413-6c1b7dc18548?w=600&h=480&fit=crop"
+        alt="Stain Eraser Pen"
+      />
+      <div class="product-body">
+        <div class="product-tag">Spot Treatment</div>
+        <h3>Neem Enzyme Stain Eraser</h3>
+        <p>Targeted plant-enzyme action lifts coffee, wine, oil, and pet stains — even on delicate or light-coloured fabrics.</p>
+        <ul class="product-features">
+          <li><i data-lucide="check-circle-2"></i> Active neem leaf enzymes</li>
+          <li><i data-lucide="check-circle-2"></i> Safe on all colourfastness levels</li>
+          <li><i data-lucide="check-circle-2"></i> Biodegradable packaging</li>
+        </ul>
+        <div class="product-price-row">
+          <span class="product-price">฿ 340</span>
+          <a href="#cta" class="btn-sm">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section class="features" id="features">
+  <div class="section-header">
+    <span class="section-tag">Why เฟอนิเซิร์ฟ</span>
+    <h2>Science Rooted in Nature</h2>
+    <p>Every bottle is the result of rigorous botanical research and a commitment to clean-label chemistry.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i data-lucide="flask-conical"></i>
+      </div>
+      <h3>Plant Enzyme Technology</h3>
+      <p>Active enzymes from neem and papaya break down stain molecules at the molecular level, not just mask them.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i data-lucide="wind"></i>
+      </div>
+      <h3>Odour-Elimination System</h3>
+      <p>Our citrus bioflavonoid complex binds to odour-causing compounds and eliminates them on contact — no synthetic fragrance cover-ups.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i data-lucide="heart-pulse"></i>
+      </div>
+      <h3>Non-Toxic & Hypoallergenic</h3>
+      <p>Free from phosphates, parabens, and optical brighteners. Tested by independent dermatologists for sensitive skin households.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i data-lucide="recycle"></i>
+      </div>
+      <h3>Sustainably Sourced</h3>
+      <p>All botanical ingredients are traceable to certified organic farms in Thailand. Packaging uses 80% post-consumer recycled material.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOCIAL PROOF ─── -->
+<section class="proof" id="proof">
+  <div class="section-header">
+    <span class="section-tag">Trusted by Thousands</span>
+    <h2>Real Results,<br />Real Homes</h2>
+    <p>From family living rooms to boutique hotels — the results speak for themselves.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <strong>50,000+</strong>
+      <span>Units sold</span>
+    </div>
+    <div class="stat">
+      <strong>4.9</strong>
+      <span>Average rating</span>
+    </div>
+    <div class="stat">
+      <strong>98%</strong>
+      <span>Would recommend</span>
+    </div>
+    <div class="stat">
+      <strong>8+</strong>
+      <span>Years of research</span>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+      </div>
+      <blockquote>
+        "My velvet sofa had a massive red wine stain I had given up on. The Neem Enzyme Stain Eraser lifted it completely in under ten minutes. I genuinely could not believe it. This is now a permanent fixture in my cleaning cabinet."
+      </blockquote>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://picsum.photos/seed/kunying/80/80" alt="Kunying portrait" />
+        <div>
+          <div class="testi-name">Kunying Phasuk</div>
+          <div class="testi-role">Interior Designer, Bangkok</div>
+        </div>
+        <span class="testi-tag">Verified</span>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+      </div>
+      <blockquote>
+        "We use the Herbal Fabric Refresh Spray daily across our 12-room guesthouse. Guests constantly ask what smells so lovely. The lemongrass scent is clean and natural — not overpowering at all. Reordering every month."
+      </blockquote>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://picsum.photos/seed/arkon42/80/80" alt="Arkon portrait" />
+        <div>
+          <div class="testi-name">Arkon Chai-anan</div>
+          <div class="testi-role">Guesthouse Owner, Chiang Mai</div>
+        </div>
+        <span class="testi-tag">Verified</span>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+      </div>
+      <blockquote>
+        "I have two cats and a toddler — my sofa takes a beating. The Deep-Clean Botanical Foam handles pet hair, muddy handprints, and mystery stains alike. The fact that it has no harsh chemicals gives me real peace of mind."
+      </blockquote>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://picsum.photos/seed/nangfah/80/80" alt="Nangfah portrait" />
+        <div>
+          <div class="testi-name">Nangfah Lorpracha</div>
+          <div class="testi-role">Mother of two, Phuket</div>
+        </div>
+        <span class="testi-tag">Verified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img
+        class="about-img-main"
+        src="https://images.unsplash.com/photo-1584204559709-ca7d413229eb?w=700&h=800&fit=crop"
+        alt="Botanical plant extract"
+      />
+      <img
+        class="about-img-accent"
+        src="https://images.unsplash.com/photo-1686178827149-6d55c72d81df?w=400&h=400&fit=crop"
+        alt="Cleaning upholstery"
+      />
+      <div class="about-pill">
+        <i data-lucide="award"></i>
+        Founded in Chiang Mai, 2016
+      </div>
+    </div>
+    <div class="about-content">
+      <span class="section-tag">Our Story</span>
+      <h2>Born from the<br /><em>Thai Herb Garden</em></h2>
+      <p>
+        เฟอนิเซิร์ฟ began in a small apothecary laboratory in Chiang Mai's old city, where our founder
+        Praphatsorn Wongwan spent years studying the cleaning properties of local medicinal plants —
+        neem, lemongrass, kaffir lime, and turmeric root.
+      </p>
+      <p>
+        What started as a personal obsession with replacing her home's harsh chemical cleaners became
+        a decade-long mission: proving that botanical compounds could outperform synthetic detergents,
+        not just match them. Every formula in our range is the product of that research.
+      </p>
+      <p>
+        Today, เฟอนิเซิร์ฟ products are trusted in homes, hotels, and clinics across Thailand —
+        all without a single phosphate, optical brightener, or synthetic preservative.
+      </p>
+      <div class="about-values">
+        <div class="about-value">
+          <div class="about-value-icon"><i data-lucide="microscope"></i></div>
+          <div>
+            <h4>Science-led</h4>
+            <p>Every ingredient validated by our in-house lab</p>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon"><i data-lucide="sprout"></i></div>
+          <div>
+            <h4>Botanically pure</h4>
+            <p>No synthetics, ever — in formula or fragrance</p>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon"><i data-lucide="globe-2"></i></div>
+          <div>
+            <h4>Thai-grown</h4>
+            <p>Supporting local organic herb farmers</p>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon"><i data-lucide="package-2"></i></div>
+          <div>
+            <h4>Low-waste</h4>
+            <p>Refillable packaging available for all SKUs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BAND ─── -->
+<section class="cta-band" id="cta">
+  <span class="section-tag">Start Today</span>
+  <h2>Give Your Furniture<br />the Care It Deserves</h2>
+  <p>
+    Order before 2 pm and receive same-day dispatch across Bangkok.
+    Free nationwide shipping on orders over ฿ 800.
+  </p>
+  <div class="cta-actions">
+    <a href="#products" class="btn-primary">
+      <i data-lucide="shopping-bag"></i>
+      Shop the Full Range
+    </a>
+    <a href="#about" class="btn-outline">
+      <i data-lucide="mail"></i>
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">เฟอนิเซิร์ฟ<span>.</span></a>
+      <p>
+        Plant-powered upholstery care crafted in Thailand.
+        Clean formulas for cleaner homes — naturally.
+      </p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+        <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">Botanical Foam</a></li>
+        <li><a href="#">Refresh Spray</a></li>
+        <li><a href="#">Stain Eraser</a></li>
+        <li><a href="#">Starter Bundle</a></li>
+        <li><a href="#">Refill Packs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#">Ingredients</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Press &amp; Media</a></li>
+        <li><a href="#">Stockists</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <i data-lucide="map-pin"></i>
+        <span>142/7 Nimman Soi 7, Chiang Mai 50200, Thailand</span>
+      </div>
+      <div class="footer-contact-item">
+        <i data-lucide="phone"></i>
+        <span>+66 (0) 53 890 412</span>
+      </div>
+      <div class="footer-contact-item">
+        <i data-lucide="mail"></i>
+        <span>hello@ferniserv.co.th</span>
+      </div>
+      <div class="footer-contact-item">
+        <i data-lucide="clock"></i>
+        <span>Mon–Fri, 9:00–18:00 (ICT)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 เฟอนิเซิร์ฟ Co., Ltd. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Settings</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

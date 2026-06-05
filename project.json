@@ -1,0 +1,30 @@
+{
+  "slug": "cust-56f25b567568",
+  "brand_dna": "เฟอนิเซิร์ฟ is a brand of cleaning products specializing in upholstery cleaners. They want an organic and herbal look, with a green color palette that conveys freshness and natural qualities.",
+  "variant_count": 3,
+  "client_id": null,
+  "tags": [
+    "organic",
+    "cleaning",
+    "green"
+  ],
+  "generated_at": "2026-06-05T03:28:45Z",
+  "prompt_template": "variant.md",
+  "actions": [
+    {
+      "type": "generate",
+      "at": "2026-06-05T03:40:21Z",
+      "variants": {
+        "v1": {
+          "size_bytes": 38441
+        },
+        "v2": {
+          "size_bytes": 42599
+        },
+        "v3": {
+          "size_bytes": 49731
+        }
+      }
+    }
+  ]
+}
