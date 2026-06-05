@@ -1048,6 +1048,31 @@
       .nav-links { display: none; }
       .nav-burger { display: block; }
 
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--forest);
+        padding: 0.5rem 4% 1.2rem;
+        gap: 0;
+        z-index: 99;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+
+      .nav-links.open li {
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .nav-links.open a {
+        display: block;
+        padding: 0.85rem 0;
+        font-size: 1rem;
+      }
+
       .hero {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -1108,7 +1133,7 @@
       <button class="lang-btn active" data-lang="th" aria-pressed="true">TH</button>
       <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
-    <button class="nav-burger" aria-label="Menu">
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false">
       <i data-lucide="menu"></i>
     </button>
   </div>
@@ -1531,6 +1556,24 @@
 
 <script>
   lucide.createIcons();
+
+  // Mobile nav toggle
+  (function () {
+    var burger = document.querySelector('.nav-burger');
+    var navLinks = document.querySelector('.nav-links');
+    if (burger && navLinks) {
+      burger.addEventListener('click', function () {
+        var isOpen = navLinks.classList.toggle('open');
+        burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  })();
 
   (function () {
     var STORAGE_KEY = 'fnserv-lang';
